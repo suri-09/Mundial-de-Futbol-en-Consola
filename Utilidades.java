@@ -13,6 +13,7 @@ public class Utilidades {
      */
     public static byte[][] banderas(int pais) {
         byte[][][] paises = {
+                // Colombia.
                 {{ 4, 4, 4, 4, 4, 4, 4, 4, 4 },
                  { 4, 4, 4, 4, 4, 4, 4, 4, 4 },
                  { 4, 4, 4, 4, 4, 4, 4, 4, 4 },
