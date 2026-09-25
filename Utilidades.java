@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -5,28 +7,40 @@ public class Utilidades {
 
     /**
      * Da el array con los colores de la bandera del pais dado.
-     * @param pais Índice del país en el array.
-     * @return Array bidimensional con los colores del país.
+     *
+     * @param pais Índice del país en la tabla.
+     * @return Array bidimensional con los colores de la bandera del país.
      */
 
-    public static byte[][] banderas(int pais) {
-        byte[][][] paises = {
-                // Colombia.
-                {{ 4, 4, 4, 4, 4, 4, 4, 4, 4 },
-                 { 4, 4, 4, 4, 4, 4, 4, 4, 4 },
-                 { 4, 4, 4, 4, 4, 4, 4, 4, 4 },
-                 { 2, 2, 2, 2, 2, 2, 2, 2, 2 },
-                 { 2, 2, 2, 2, 2, 2, 2, 2, 2 },
-                 { 1, 1, 1, 1, 1, 1, 1, 1, 1 }},
-                {{}}};
-                
-        return paises[pais];
+    public static byte[][] getBandera(int pais) throws FileNotFoundException {
+        byte[][] bandera = new byte[10][15];
+
+        Scanner sc = new Scanner(new File("./banderas.csv"));
+
+        int saltos = (10 * pais) + (pais + 1);
+
+        for (int i = 0; i < saltos; i++) {
+            sc.nextLine();
+        }
+
+        for (int i = 0; i < 10; i++) {
+
+            String[] lineaActual = sc.nextLine().split(",");
+
+            for (int j = 0; j < 15; j++) {
+                bandera[i][j] = Byte.parseByte(lineaActual[j]);
+            }
+        }
+
+        return bandera;
     }
 
     /**
-     * Merma un array bidimensional según el factor dado, eliminando las filas y las columnas que están entre aquellas que sobreviven.
+     * Merma un array bidimensional según el factor dado, eliminando las filas y las columnas que están entre
+     * aquellas que sobreviven.
      * Si las columnas o las filas no son divisibles por el factor, se truncan las últimas.
-     * @param array Array a diezmar.
+     *
+     * @param array  Array a diezmar.
      * @param factor Factor de diezmado.
      * @return Array diezmado.
      */
@@ -48,8 +62,10 @@ public class Utilidades {
     }
 
     /**
-     * Interpola un array bidimensional según el factor dado, copiando los valores del array original a los elementos interpolados.
-     * @param array Array a interpolar.
+     * Interpola un array bidimensional según el factor dado, copiando los valores del array original a los elementos
+     * interpolados.
+     *
+     * @param array  Array a interpolar.
      * @param factor Factor de interpolación.
      * @return Array interpolado.
      */
@@ -76,6 +92,7 @@ public class Utilidades {
 
         /**
          * Imprime el prompt dada e intenta obtener el número entero de la consola, maneja errores.
+         *
          * @param prompt Mensaje a mostrar al usuario.
          */
         public static int getInt(String prompt) {
