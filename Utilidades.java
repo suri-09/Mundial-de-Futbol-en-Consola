@@ -32,6 +32,8 @@ public class Utilidades {
             }
         }
 
+        sc.close();
+
         return bandera;
     }
 
