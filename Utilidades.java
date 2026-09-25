@@ -88,6 +88,37 @@ public class Utilidades {
         return arrayAgregar;
     }
 
+    /**
+     * Imprime un espacio con el BG color dado según la tabla de colores.
+     * 1. amarillo
+     * 2. naranja
+     * 3. rojo
+     * 4. morado
+     * 5. azul
+     * 6. verde
+     * 7. blanco
+     * 8. negro
+     * 9. cafe
+     *
+     * @param color Indice del color en la tabla.
+     */
+    public static void printColor(int color) {
+
+        String[] colores = {
+                "\033[43m", // Amarillo
+                "\033[48;5;208m", // Naranja
+                "\033[41m", // Rojo
+                "\033[45m", // Morado
+                "\033[44m", // Azul
+                "\033[42m", // Verde
+                "\033[47m", // Blanco
+                "\033[40m", // Negro
+                "\033[48;5;88m", // Cafe
+        };
+
+        System.out.print(colores[color - 1] + "   ");
+    }
+
     public static class input {
 
         public static Scanner sc = new Scanner(System.in);
