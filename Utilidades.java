@@ -17,6 +17,10 @@ public class Utilidades {
 
         Scanner sc = new Scanner(new File("./banderas.csv"));
 
+        if (pais < 0 || pais > 47) {
+            throw new RuntimeException();
+        }
+
         int saltos = (10 * pais) + (pais + 1);
 
         for (int i = 0; i < saltos; i++) {
