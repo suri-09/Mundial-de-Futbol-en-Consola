@@ -13,3 +13,4 @@ facilitando la exploración y reconocimiento de las selecciones participantes.
 - Selección del tamaño de la bandera.
 - Interfaz sencilla e interactiva.
 - Adaptación a diferentes tamaños de pantalla. 
+
