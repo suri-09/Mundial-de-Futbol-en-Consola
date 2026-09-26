@@ -1,6 +1,4 @@
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class mundial {
     public static void main(String[] args) throws FileNotFoundException {
@@ -37,13 +35,14 @@ public class mundial {
                         System.out.println((i + 1) + ") " + paises[i]);
                     }
 
+                    byte[][] banderaSel;
                     byte[][] bandera;
                     int seleccion;
 
                     while (true) {
                         try {
                             seleccion = Utilidades.input.getInt("Seleccione un país:") - 1;
-                            bandera = Utilidades.getBandera(seleccion);
+                            banderaSel = Utilidades.getBandera(seleccion);
 
                             break;
                         } catch (RuntimeException e) {
@@ -53,7 +52,37 @@ public class mundial {
 
                     System.out.println(paises[seleccion]);
 
-                    //TODO: Añadir menu para seleccionar el tamaño de la bandera.
+                    System.out.println("Escoge el tamaño de la bandera.");
+                    System.out.println("[1] Ícono\n" +
+                            "[2] Pequeño\n" +
+                            "[3] Mediano\n" +
+                            "[4] Grande");
+
+                    int size = Utilidades.input.getInt("Seleccione un tamaño:");
+
+                    while (!(size < 4 && size > 0)) {
+                        System.out.println("Debes ingresar una opción valida!");
+                        size = Utilidades.input.getInt("Seleccione un tamaño:");
+                    }
+
+                    //TODO: Buscar los valores mas optimos para cada tamaño
+
+                    switch (size) {
+                        case 1:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 7), 13);
+                            break;
+                        case 2:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 1), 1);
+                            break;
+                        case 3:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 3), 2);
+                            break;
+                        case 4:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 2), 1);
+                            break;
+                        default:
+                            throw new IllegalStateException("Valor inesperado: " + size);
+                    }
 
                     for (int i = 0; i < bandera.length; i++) {
                         for (int j = 0; j < bandera[0].length; j++) {
