@@ -5,6 +5,22 @@ import java.util.Scanner;
 
 public class Utilidades {
 
+    private static final int FILAS = 10;
+    private static final int COLS = 15;
+    private static final int TOTAL_PAISES = 48;
+
+    private static final String[] COLORES = {
+            "\033[43m", // Amarillo
+            "\033[48;5;208m", // Naranja
+            "\033[41m", // Rojo
+            "\033[45m", // Morado
+            "\033[44m", // Azul
+            "\033[42m", // Verde
+            "\033[47m", // Blanco
+            "\033[40m", // Negro
+            "\033[48;5;88m", // Cafe
+    };
+
     /**
      * Da el array con los colores de la bandera del pais dado.
      *
@@ -13,25 +29,26 @@ public class Utilidades {
      */
 
     public static byte[][] getBandera(int pais) throws FileNotFoundException {
-        byte[][] bandera = new byte[10][15];
+        byte[][] bandera = new byte[FILAS][COLS];
 
         Scanner sc = new Scanner(new File("./banderas.csv"));
 
-        if (pais < 0 || pais > 47) {
+        //TODO: Usar IllegalArgumentException con mensaje en vez de RuntimeException vacía
+        if (pais < 0 || pais > TOTAL_PAISES - 1) {
             throw new RuntimeException();
         }
 
-        int saltos = (10 * pais) + (pais + 1);
+        int saltos = (FILAS * pais) + (pais + 1);
 
         for (int i = 0; i < saltos; i++) {
             sc.nextLine();
         }
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < FILAS; i++) {
 
             String[] lineaActual = sc.nextLine().split(",");
 
-            for (int j = 0; j < 15; j++) {
+            for (int j = 0; j < COLS; j++) {
                 bandera[i][j] = Byte.parseByte(lineaActual[j]);
             }
         }
@@ -39,6 +56,47 @@ public class Utilidades {
         sc.close();
 
         return bandera;
+    }
+
+    /**
+     * Da los nombres de los países, leídos de la primera columna de cada bloque del CSV.
+     *
+     * @return Array con los nombres en el mismo orden que las banderas.
+     */
+    public static String[] getPaises() throws FileNotFoundException {
+
+        String[] paises = new String[TOTAL_PAISES];
+
+        Scanner sc = new Scanner(new File("./banderas.csv"));
+
+        for (int pais = 0; pais < TOTAL_PAISES; pais++) {
+
+            paises[pais] = sc.nextLine().split(",")[0].trim();
+
+            for (int i = 0; i < FILAS; i++) {
+                sc.nextLine();
+            }
+        }
+
+        sc.close();
+
+        return paises;
+    }
+
+    /**
+     * Imprime el encabezado del programa.
+     */
+    public static void banner() {
+
+        System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
+                "|  \\/  | | | | \\ | |  _ \\_ _|  / \\  | |     |___ \\ / _ \\|___ \\ / ___|\n" + //
+                "| |\\/| | | | |  \\| | | | | |  / _ \\ | |       __) | | | | __) | |  _ \n" + //
+                "| |  | | |_| | |\\  | |_| | | / ___ \\| |___   / __/| |_| |/ __/| |_| |\n" + //
+                "|_|  |_|\\___/|_| \\_|____/___/_/   \\_\\_____| |_____|\\___/_____|\\____|");
+
+        System.out.println("=====================================================================");
+        System.out.println(" VISUALIZADOR DE BANDERAS DE LAS 48 SELECCIONES");
+        System.out.println("=====================================================================");
     }
 
     /**
@@ -108,19 +166,7 @@ public class Utilidades {
      */
     public static void printColor(int color) {
 
-        String[] colores = {
-                "\033[43m", // Amarillo
-                "\033[48;5;208m", // Naranja
-                "\033[41m", // Rojo
-                "\033[45m", // Morado
-                "\033[44m", // Azul
-                "\033[42m", // Verde
-                "\033[47m", // Blanco
-                "\033[40m", // Negro
-                "\033[48;5;88m", // Cafe
-        };
-
-        System.out.print(colores[color - 1] + "   ");
+        System.out.print(COLORES[color - 1] + "   ");
     }
 
     public static class input {
@@ -142,7 +188,8 @@ public class Utilidades {
 
                     break;
                 } catch (InputMismatchException e) {
-                    sc.next();
+                    //TODO: Usar sc.next() aquí, sc.nextInt() vuelve a lanzar la excepción
+                    sc.nextInt();
 
                     System.out.println("Debes ingresar un numero valido!");
                 }

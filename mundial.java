@@ -3,7 +3,8 @@ import java.io.FileNotFoundException;
 public class mundial {
     public static void main(String[] args) throws FileNotFoundException {
 
-        System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
+        while(true){
+              System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
                 "|  \\/  | | | | \\ | |  _ \\_ _|  / \\  | |     |___ \\ / _ \\|___ \\ / ___|\n" + //
                 "| |\\/| | | | |  \\| | | | | |  / _ \\ | |       __) | | | | __) | |  _ \n" + //
                 "| |  | | |_| | |\\  | |_| | | / ___ \\| |___   / __/| |_| |/ __/| |_| |\n" + //
@@ -14,7 +15,7 @@ public class mundial {
         System.out.println("=====================================================================");
 
         System.out.println("[1] Ver la bandera de un país.\n" +
-                "[3] Salir");
+                "[2] Salir");
 
         int opcion = Utilidades.input.getInt("Ingrese la opción:");
 
@@ -25,16 +26,14 @@ public class mundial {
                 "BAJOS", "BRASIL", "QATAR", "ESTADOS UNIDOS", "URUGUAY", "SENEGAL", "JORDANIA", "CANADA", "AUSTRALIA"
                 , "NUEVA ZELANDA", "PANAMA", "CURAZAO", "SUECIA", "IRAN", "UZBEKISTAN", "IRAK", "GHANA"};
 
-        while (opcion != 3) {
+    
+            if (opcion == 1){
+                System.out.println("Lista de paises:");
 
-            switch (opcion) {
-                case 1:
-                    System.out.println("Lista de paises:");
-
-                    for (int i = 0; i < paises.length; i++) {
+                for (int i = 0; i < paises.length; i++) {
                         System.out.println((i + 1) + ") " + paises[i]);
                     }
-
+                    
                     byte[][] banderaSel;
                     byte[][] bandera;
                     int seleccion;
@@ -60,12 +59,13 @@ public class mundial {
 
                     int size = Utilidades.input.getInt("Seleccione un tamaño:");
 
-                    while (!(size < 4 && size > 0)) {
+
+                    while (!(size < 5 && size > 0)) {
                         System.out.println("Debes ingresar una opción valida!");
-                        size = Utilidades.input.getInt("Seleccione un tamaño:");
+                        size = Utilidades.input.getInt("Seleccione un tamaño:") - 1;
                     }
 
-                    //TODO: Buscar los valores mas optimos para cada tamaño
+                     //TODO: Buscar los valores mas optimos para cada //tamaño
 
                     switch (size) {
                         case 1:
@@ -89,30 +89,19 @@ public class mundial {
                             Utilidades.printColor(bandera[i][j]);
                         }
                         System.out.println("\033[0m");
-                    }
+                    }   
 
-                    break;
-
-                default:
-                    break;
             }
 
+            else{
 
-            System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
-                    "|  \\/  | | | | \\ | |  _ \\_ _|  / \\  | |     |___ \\ / _ \\|___ \\ / ___|\n" + //
-                    "| |\\/| | | | |  \\| | | | | |  / _ \\ | |       __) | | | | __) | |  _ \n" + //
-                    "| |  | | |_| | |\\  | |_| | | / ___ \\| |___   / __/| |_| |/ __/| |_| |\n" + //
-                    "|_|  |_|\\___/|_| \\_|____/___/_/   \\_\\_____| |_____|\\___/_____|\\____|");
-
-            System.out.println("=====================================================================");
-            System.out.println(" VISUALIZADOR DE BANDERAS DE LAS 48 SELECCIONES");
-            System.out.println("=====================================================================");
-
-            System.out.println("[1] Ver la bandera de un país.\n" +
-                    "[3] Salir");
-
-            opcion = Utilidades.input.getInt("Ingrese la opción:");
-
+                System.out.println("¡Hasta luego!");
+                break; 
+            }
         }
+
+       
     }
+
+        
 }
