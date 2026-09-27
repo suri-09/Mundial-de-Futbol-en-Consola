@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class tablas {
      public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
 
   String[][] tabla = {
             {"AUSTRIA", "", "", "", "", "", "", "", "", "", ""},
@@ -55,18 +56,30 @@ public class tablas {
         };
 
         String[] columnas = {
-            "Pais", "PJ", "PG", "PE", "PP", "GF", "GC",
+            "Pos","Pais", "PJ", "PG", "PE", "PP", "GF", "GC",
             "DG", "TA", "TR", "Pts"
         };
 
-        System.out.println("Pais | PJ | PG | PE | PP | GF | GC | DG | TA | TR | Pts");
-
-        for(int i = 0; i < tabla.length ; i++){
-            for(int j = 0; j < tabla[i].length; j++ ){
-
-                System.out.printf("|%-3s", tabla[i][j] + " ");
-            }
+        // Parte de arriba
+        System.out.printf("%-20s", columnas[0]);
+        for (int i = 1; i < columnas.length; i++) {
+            System.out.printf(" | %-6s", columnas[i]);
         }
+
         System.out.println();
+
+        // Filas
+        for (int i = 0; i < 5; i++) {
+            System.out.printf("%-20s", tabla[i][0]); 
+            for (int j = 1; j < tabla[i].length; j++) {
+                System.out.printf(" | %-6s", tabla[i][j]);
+            }
+        System.out.println();
+        }
+
+        System.out.println();
+        
+       
+ 
      }
 }
