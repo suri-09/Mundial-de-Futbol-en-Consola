@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -188,8 +190,7 @@ public class Utilidades {
 
                     break;
                 } catch (InputMismatchException e) {
-                    //TODO: Usar sc.next() aquí, sc.nextInt() vuelve a lanzar la excepción
-                    sc.nextInt();
+                    sc.next(); // Limpia el buffer de Scanner
 
                     System.out.println("Debes ingresar un numero valido!");
                 }
@@ -197,6 +198,71 @@ public class Utilidades {
 
             return num;
         }
+    }
 
+    public static class tablaPosiciones {
+        private static final int COLS_TABLA = 11;
+
+        /**
+         * Lee la tabla del archivo, y la retorna como una matriz 2x2.
+         *
+         * @return Matriz con la tabla de posiciones.
+         */
+        public static String[][] getTabla() throws FileNotFoundException {
+
+            Scanner sc = new Scanner(new File("./posiciones.csv"));
+
+            String[][] tabla = new String[TOTAL_PAISES][COLS_TABLA];
+
+            for (int i = 0; i < TOTAL_PAISES; i++) {
+
+                String[] lineaActual = sc.nextLine().split(",");
+
+                tabla[i] = lineaActual;
+            }
+
+            sc.close();
+
+            return tabla;
+        }
+
+        /**
+         * Edita la tabla en el archivo según la posición y el valor dado.
+         *
+         * @param fila  Fila a editar.
+         * @param col   Columna a editar.
+         * @param valor Valor a poner en la posición dada.
+         */
+        public static void editTabla(int fila, int col, int valor) throws IOException {
+
+            Scanner sc = new Scanner(new File("./posiciones.csv"));
+
+            String[][] tabla = new String[TOTAL_PAISES][COLS_TABLA];
+
+            for (int i = 0; i < TOTAL_PAISES; i++) {
+
+                String[] lineaActual = sc.nextLine().split(",");
+
+                tabla[i] = lineaActual;
+            }
+
+            sc.close();
+
+            tabla[fila][col] = "" + valor;
+
+            FileWriter fw = new FileWriter("./posiciones.csv");
+
+            String[] lineas = new String[TOTAL_PAISES];
+
+            for (int i = 0; i < tabla.length; i++) {
+                lineas[i] = String.join(",", tabla[i]);
+            }
+
+            String archivo = String.join("\n", lineas);
+
+            fw.write(archivo);
+
+            fw.close();
+        }
     }
 }
