@@ -3,37 +3,40 @@ import java.io.FileNotFoundException;
 public class mundial {
     public static void main(String[] args) throws FileNotFoundException {
 
-        while(true){
-              System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
-                "|  \\/  | | | | \\ | |  _ \\_ _|  / \\  | |     |___ \\ / _ \\|___ \\ / ___|\n" + //
-                "| |\\/| | | | |  \\| | | | | |  / _ \\ | |       __) | | | | __) | |  _ \n" + //
-                "| |  | | |_| | |\\  | |_| | | / ___ \\| |___   / __/| |_| |/ __/| |_| |\n" + //
-                "|_|  |_|\\___/|_| \\_|____/___/_/   \\_\\_____| |_____|\\___/_____|\\____|");
+        while (true) {
+            System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
+                    "|  \\/  | | | | \\ | |  _ \\_ _|  / \\  | |     |___ \\ / _ \\|___ \\ / ___|\n" + //
+                    "| |\\/| | | | |  \\| | | | | |  / _ \\ | |       __) | | | | __) | |  _ \n" + //
+                    "| |  | | |_| | |\\  | |_| | | / ___ \\| |___   / __/| |_| |/ __/| |_| |\n" + //
+                    "|_|  |_|\\___/|_| \\_|____/___/_/   \\_\\_____| |_____|\\___/_____|\\____|");
 
-        System.out.println("=====================================================================");
-        System.out.println(" VISUALIZADOR DE BANDERAS DE LAS 48 SELECCIONES");
-        System.out.println("=====================================================================");
+            System.out.println("=====================================================================");
+            System.out.println(" VISUALIZADOR DE BANDERAS DE LAS 48 SELECCIONES");
+            System.out.println("=====================================================================");
 
-        System.out.println("[1] Ver la bandera de un país.\n" +
-                "[2] Salir");
+            System.out.println("[1] Ver la bandera de un país.\n" +
+                    "[2] Ver o editar la tabla de posiciones.\n" +
+                    "[3] Salir");
 
-        int opcion = Utilidades.input.getInt("Ingrese la opción:");
+            int opcion = Utilidades.input.getInt("Ingrese la opción:");
 
-        String[] paises = {"AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ", "INGLATERRA "
-                , "ESPANA", "FRANCIA", "CABO VERDE", "COREA DEL SUR", "CONGO RD", "ECUADOR", "ALEMANIA", "BÉLGICA",
-                "CHEQUIA", "JAPON", "SUDÁFRICA", "TURQUÍA", "COLOMBIA", "ESCOCIA", "PARAGUAY", "SUIZA", "EGIPTO",
-                "PORTUGAL", "HAITI", "ARGELIA", "ARABIA SAUDI", "CROACIA", "ARGENTINA", "COSTA DE MARFIL", "PAISES " +
-                "BAJOS", "BRASIL", "QATAR", "ESTADOS UNIDOS", "URUGUAY", "SENEGAL", "JORDANIA", "CANADA", "AUSTRALIA"
-                , "NUEVA ZELANDA", "PANAMA", "CURAZAO", "SUECIA", "IRAN", "UZBEKISTAN", "IRAK", "GHANA"};
+            String[] paises = {"AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
+                    "INGLATERRA ", "ESPANA", "FRANCIA", "CABO VERDE", "COREA DEL SUR", "CONGO RD", "ECUADOR",
+                    "ALEMANIA", "BÉLGICA", "CHEQUIA", "JAPON", "SUDÁFRICA", "TURQUÍA", "COLOMBIA", "ESCOCIA",
+                    "PARAGUAY", "SUIZA", "EGIPTO", "PORTUGAL", "HAITI", "ARGELIA", "ARABIA SAUDI", "CROACIA",
+                    "ARGENTINA", "COSTA DE MARFIL", "PAISES BAJOS", "BRASIL", "QATAR", "ESTADOS UNIDOS", "URUGUAY",
+                    "SENEGAL", "JORDANIA", "CANADA", "AUSTRALIA", "NUEVA ZELANDA", "PANAMA", "CURAZAO", "SUECIA",
+                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA"};
 
-    
-            if (opcion == 1){
-                System.out.println("Lista de paises:");
 
-                for (int i = 0; i < paises.length; i++) {
+            switch (opcion) {
+                case 1:
+                    System.out.println("Lista de paises:");
+
+                    for (int i = 0; i < paises.length; i++) {
                         System.out.println((i + 1) + ") " + paises[i]);
                     }
-                    
+
                     byte[][] banderaSel;
                     byte[][] bandera;
                     int seleccion;
@@ -65,7 +68,7 @@ public class mundial {
                         size = Utilidades.input.getInt("Seleccione un tamaño:") - 1;
                     }
 
-                     //TODO: Buscar los valores mas optimos para cada //tamaño
+                    //TODO: Buscar los valores mas optimos para cada //tamaño
 
                     switch (size) {
                         case 1:
@@ -89,19 +92,23 @@ public class mundial {
                             Utilidades.printColor(bandera[i][j]);
                         }
                         System.out.println("\033[0m");
-                    }   
+                    }
 
-            }
+                    break;
 
-            else{
-
-                System.out.println("¡Hasta luego!");
-                break; 
+                case 2:
+                    break;
+                case 3:
+                    System.out.println("¡Hasta luego!");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("¡Debes ingresar una opción valida!");
+                    break;
             }
         }
-
-       
     }
-
-        
 }
+
+
+
