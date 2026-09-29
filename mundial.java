@@ -18,7 +18,8 @@ public class mundial {
                     "[2] Ver o editar la tabla de posiciones.\n" +
                     "[3] Salir");
 
-            int opcion = Utilidades.input.getInt("Ingrese la opción:");
+           
+            int opcion = Utilidades.input.getInt("ingrese una opción");
 
             String[] paises = {"AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
                     "INGLATERRA ", "ESPANA", "FRANCIA", "CABO VERDE", "COREA DEL SUR", "CONGO RD", "ECUADOR",
@@ -97,6 +98,24 @@ public class mundial {
                     break;
 
                 case 2:
+                    String[][] tabla = Utilidades.tablaPosiciones.getTabla();
+
+                    String[] arriba = {"Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts"};
+
+                    System.out.printf("%-4s%-22s", "#", arriba[0]);
+                    for (int j = 1; j < arriba.length; j ++){
+                        System.out.printf("%5s", arriba[j]);
+                    }
+                    System.out.println();
+
+                    for (int i = 0; i < tabla.length; i ++){
+                        System.out.printf("%-4d%-22s", i + 1, tabla[i][0]);
+                        for (int j = 1; j < tabla[i].length; j ++){
+                            System.out.printf("%5s", tabla[i][j]);
+                        }
+                        System.out.println();
+                    }
+
                     break;
                 case 3:
                     System.out.println("¡Hasta luego!");
