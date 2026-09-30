@@ -103,7 +103,9 @@ public class mundial {
 
                     String[][] tabla = Utilidades.tablaPosiciones.getTabla();
 
-                    while (true) {
+                    boolean centinela = true;
+
+                    while (centinela) {
 
                         Utilidades.mostrarTabla(tabla, contador, mostrar);
 
@@ -135,23 +137,32 @@ public class mundial {
                                 }
 
                             case 3:
-                                int fila = Utilidades.input.getInt("ingrese el número de la fila que desea cambiar");
-                                int col = Utilidades.input.getInt("ingrese el número de la columna que desea cambiar");
-                                int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
 
-                                try {
-                                    Utilidades.tablaPosiciones.editTabla(fila, col, valor);
-                                    tabla = Utilidades.tablaPosiciones.getTabla();
-                                } catch (IOException e) {
-                                    System.out.println("error" + e.getMessage());
+                                int fila = Utilidades.input.getInt("ingrese el número de la fila que desea cambiar")
+                                        - 1;
+                                int col = Utilidades.input.getInt("ingrese el número de la columna que desea cambiar")
+                                        - 1;
+
+                                if (col > 1) {
+                                    int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
+                                    try {
+                                        Utilidades.tablaPosiciones.editTabla(fila, col, valor);
+                                        tabla = Utilidades.tablaPosiciones.getTabla();
+                                    } catch (IOException e) {
+                                        System.out.println("error" + e.getMessage());
+                                    }
+                                }
+
+                                else {
+                                    System.out.println("No es un dato posible de cambiar");
                                 }
 
                                 break;
 
                             case 4:
+                                centinela = false;
                                 break;
-                            default:
-                                break;
+
                         }
 
                     }
