@@ -18,17 +18,15 @@ public class mundial {
                     "[2] Ver o editar la tabla de posiciones.\n" +
                     "[3] Salir");
 
-           
             int opcion = Utilidades.input.getInt("ingrese una opción");
 
-            String[] paises = {"AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
+            String[] paises = { "AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
                     "INGLATERRA ", "ESPANA", "FRANCIA", "CABO VERDE", "COREA DEL SUR", "CONGO RD", "ECUADOR",
                     "ALEMANIA", "BÉLGICA", "CHEQUIA", "JAPON", "SUDÁFRICA", "TURQUÍA", "COLOMBIA", "ESCOCIA",
                     "PARAGUAY", "SUIZA", "EGIPTO", "PORTUGAL", "HAITI", "ARGELIA", "ARABIA SAUDI", "CROACIA",
                     "ARGENTINA", "COSTA DE MARFIL", "PAISES BAJOS", "BRASIL", "QATAR", "ESTADOS UNIDOS", "URUGUAY",
                     "SENEGAL", "JORDANIA", "CANADA", "AUSTRALIA", "NUEVA ZELANDA", "PANAMA", "CURAZAO", "SUECIA",
-                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA"};
-
+                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA" };
 
             switch (opcion) {
                 case 1:
@@ -63,13 +61,12 @@ public class mundial {
 
                     int size = Utilidades.input.getInt("Seleccione un tamaño:");
 
-
                     while (!(size < 5 && size > 0)) {
                         System.out.println("Debes ingresar una opción valida!");
                         size = Utilidades.input.getInt("Seleccione un tamaño:") - 1;
                     }
 
-                    //TODO: Buscar los valores mas optimos para cada //tamaño
+                    // TODO: Buscar los valores mas optimos para cada //tamaño
 
                     switch (size) {
                         case 1:
@@ -98,25 +95,55 @@ public class mundial {
                     break;
 
                 case 2:
+
+                    int mostrar = 12;
+                    int paginas = 48 / mostrar;
+                    int contador = 0;
+
                     String[][] tabla = Utilidades.tablaPosiciones.getTabla();
 
-                    String[] arriba = {"Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts"};
+                    while (true) {
 
-                    System.out.printf("%-4s%-22s", "#", arriba[0]);
-                    for (int j = 1; j < arriba.length; j ++){
-                        System.out.printf("%5s", arriba[j]);
-                    }
-                    System.out.println();
+                        Utilidades.mostrarTabla(tabla, contador, mostrar);
 
-                    for (int i = 0; i < tabla.length; i ++){
-                        System.out.printf("%-4d%-22s", i + 1, tabla[i][0]);
-                        for (int j = 1; j < tabla[i].length; j ++){
-                            System.out.printf("%5s", tabla[i][j]);
-                        }
                         System.out.println();
+                        System.out.println("[1] Mostrar más.\n" +
+                                "[2] Mostrar menos.\n" +
+                                "[3] Editar algún valor.\n" +
+                                "[3] Salir");
+
+                        int hola = Utilidades.input.getInt("ingrese una opción");
+
+                        switch (hola) {
+                            case 1:
+                                if (contador + mostrar < tabla.length) {
+                                    contador = contador + 12;
+                                    continue;
+                                } else {
+                                    System.out.println("Ya estas mostrando todas las opciones");
+                                }
+
+                                break;
+
+                            case 2:
+                                if (contador - 12 >= 0) {
+                                    contador = contador - 12;
+                                    continue;
+                                } else {
+                                    System.out.println("No hay menos opciones");
+                                }
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                break;
+                            default:
+                                break;
+                        }
+
                     }
 
-                    break;
                 case 3:
                     System.out.println("¡Hasta luego!");
                     System.exit(0);
@@ -128,6 +155,3 @@ public class mundial {
         }
     }
 }
-
-
-

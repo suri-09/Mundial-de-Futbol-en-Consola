@@ -35,7 +35,8 @@ public class Utilidades {
 
         Scanner sc = new Scanner(new File("./banderas.csv"));
 
-        //TODO: Usar IllegalArgumentException con mensaje en vez de RuntimeException vacía
+        // TODO: Usar IllegalArgumentException con mensaje en vez de RuntimeException
+        // vacía
         if (pais < 0 || pais > TOTAL_PAISES - 1) {
             throw new RuntimeException();
         }
@@ -61,7 +62,8 @@ public class Utilidades {
     }
 
     /**
-     * Da los nombres de los países, leídos de la primera columna de cada bloque del CSV.
+     * Da los nombres de los países, leídos de la primera columna de cada bloque del
+     * CSV.
      *
      * @return Array con los nombres en el mismo orden que las banderas.
      */
@@ -102,9 +104,11 @@ public class Utilidades {
     }
 
     /**
-     * Merma un array bidimensional según el factor dado, eliminando las filas y las columnas que están entre
+     * Merma un array bidimensional según el factor dado, eliminando las filas y las
+     * columnas que están entre
      * aquellas que sobreviven.
-     * Si las columnas o las filas no son divisibles por el factor, se truncan las últimas.
+     * Si las columnas o las filas no son divisibles por el factor, se truncan las
+     * últimas.
      *
      * @param array  Array a diezmar.
      * @param factor Factor de diezmado.
@@ -128,7 +132,8 @@ public class Utilidades {
     }
 
     /**
-     * Interpola un array bidimensional según el factor dado, copiando los valores del array original a los elementos
+     * Interpola un array bidimensional según el factor dado, copiando los valores
+     * del array original a los elementos
      * interpolados.
      *
      * @param array  Array a interpolar.
@@ -176,7 +181,8 @@ public class Utilidades {
         public static Scanner sc = new Scanner(System.in);
 
         /**
-         * Imprime el prompt dada e intenta obtener el número entero de la consola, maneja errores.
+         * Imprime el prompt dada e intenta obtener el número entero de la consola,
+         * maneja errores.
          *
          * @param prompt Mensaje a mostrar al usuario.
          */
@@ -198,6 +204,31 @@ public class Utilidades {
 
             return num;
         }
+    }
+
+    public static void mostrarTabla(String[][] tabla, int contador, int mostrar) {
+
+        String[] arriba = { "Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts" };
+
+        for (int c = 0; c < mostrar; c++) {
+
+            System.out.printf("%-4s%-22s", "#", arriba[0]);
+            for (int j = 1; j < arriba.length; j++) {
+                System.out.printf("%5s", arriba[j]);
+            }
+            System.out.println();
+
+            for (int i = contador; i < mostrar + contador; i++) {
+                System.out.printf("%-4d%-22s", i + 1, tabla[i][0]);
+
+                for (int j = 1; j < tabla[i].length; j++) {
+                    System.out.printf("%5s", tabla[i][j]);
+                }
+                System.out.println();
+            }
+            break;
+        }
+
     }
 
     public static class tablaPosiciones {
