@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class mundial {
     public static void main(String[] args) throws FileNotFoundException {
@@ -110,7 +111,7 @@ public class mundial {
                         System.out.println("[1] Mostrar más.\n" +
                                 "[2] Mostrar menos.\n" +
                                 "[3] Editar algún valor.\n" +
-                                "[3] Salir");
+                                "[4] Salir");
 
                         int hola = Utilidades.input.getInt("ingrese una opción");
 
@@ -134,6 +135,17 @@ public class mundial {
                                 }
 
                             case 3:
+                                int fila = Utilidades.input.getInt("ingrese el número de la fila que desea cambiar");
+                                int col = Utilidades.input.getInt("ingrese el número de la columna que desea cambiar");
+                                int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
+
+                                try {
+                                    Utilidades.tablaPosiciones.editTabla(fila, col, valor);
+                                    tabla = Utilidades.tablaPosiciones.getTabla();
+                                } catch (IOException e) {
+                                    System.out.println("error" + e.getMessage());
+                                }
+
                                 break;
 
                             case 4:
