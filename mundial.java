@@ -22,13 +22,13 @@ public class mundial {
 
             int opcion = Utilidades.input.getInt("ingrese una opción");
 
-            String[] paises = {"AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
+            String[] paises = { "AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
                     "INGLATERRA ", "ESPANA", "FRANCIA", "CABO VERDE", "COREA DEL SUR", "CONGO RD", "ECUADOR",
                     "ALEMANIA", "BÉLGICA", "CHEQUIA", "JAPON", "SUDÁFRICA", "TURQUÍA", "COLOMBIA", "ESCOCIA",
                     "PARAGUAY", "SUIZA", "EGIPTO", "PORTUGAL", "HAITI", "ARGELIA", "ARABIA SAUDI", "CROACIA",
                     "ARGENTINA", "COSTA DE MARFIL", "PAISES BAJOS", "BRASIL", "QATAR", "ESTADOS UNIDOS", "URUGUAY",
                     "SENEGAL", "JORDANIA", "CANADA", "AUSTRALIA", "NUEVA ZELANDA", "PANAMA", "CURAZAO", "SUECIA",
-                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA"};
+                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA" };
 
             switch (opcion) {
                 case 1:
@@ -146,11 +146,15 @@ public class mundial {
                                         - 1;
                                 int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
 
-                                try {
-                                    Utilidades.tablaPosiciones.editTabla(fila, col, valor);
-                                    tabla = Utilidades.tablaPosiciones.getTabla();
-                                } catch (IOException e) {
-                                    System.out.println("error" + e.getMessage());
+                                if (valor < 20) {
+                                    try {
+                                        Utilidades.tablaPosiciones.editTabla(fila, col, valor);
+                                        tabla = Utilidades.tablaPosiciones.getTabla();
+                                    } catch (IOException e) {
+                                        System.out.println("error" + e.getMessage());
+                                    }
+                                } else {
+                                    System.out.println("El valor no es permitido");
                                 }
 
                                 break;
@@ -192,7 +196,8 @@ public class mundial {
                                 System.out.println("Los partidos en el grupo " + partidos[0][1] + " son:");
 
                                 for (int i = 0; i < partidos.length; i++) {
-                                    System.out.println(partidos[i][5] + " vs " + partidos[i][6] + " el dia " + partidos[i][3] + " a las " + partidos[i][4]);
+                                    System.out.println(partidos[i][5] + " vs " + partidos[i][6] + " el dia "
+                                            + partidos[i][3] + " a las " + partidos[i][4]);
 
                                 }
 
@@ -214,7 +219,8 @@ public class mundial {
                                     }
                                 }
 
-                                System.out.println("El partido " + partido[0] + " sera " + partido[5] + " vs " + partido[6] + " el dia " + partido[3] + " a " +
+                                System.out.println("El partido " + partido[0] + " sera " + partido[5] + " vs "
+                                        + partido[6] + " el dia " + partido[3] + " a " +
                                         "las " + partido[4]);
 
                                 break;
