@@ -22,13 +22,13 @@ public class mundial {
 
             int opcion = Utilidades.input.getInt("ingrese una opción");
 
-            String[] paises = { "AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
+            String[] paises = {"AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
                     "INGLATERRA ", "ESPANA", "FRANCIA", "CABO VERDE", "COREA DEL SUR", "CONGO RD", "ECUADOR",
                     "ALEMANIA", "BÉLGICA", "CHEQUIA", "JAPON", "SUDÁFRICA", "TURQUÍA", "COLOMBIA", "ESCOCIA",
                     "PARAGUAY", "SUIZA", "EGIPTO", "PORTUGAL", "HAITI", "ARGELIA", "ARABIA SAUDI", "CROACIA",
                     "ARGENTINA", "COSTA DE MARFIL", "PAISES BAJOS", "BRASIL", "QATAR", "ESTADOS UNIDOS", "URUGUAY",
                     "SENEGAL", "JORDANIA", "CANADA", "AUSTRALIA", "NUEVA ZELANDA", "PANAMA", "CURAZAO", "SUECIA",
-                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA" };
+                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA"};
 
             switch (opcion) {
                 case 1:
@@ -64,11 +64,11 @@ public class mundial {
                     int size = Utilidades.input.getInt("Seleccione un tamaño:");
 
                     while (!(size < 5 && size > 0)) {
-                        System.out.println("Debes ingresar una opción valida!");
+                        System.out.println("¡Debes ingresar una opción valida!");
                         size = Utilidades.input.getInt("Seleccione un tamaño:") - 1;
                     }
 
-                    // TODO: Buscar los valores mas optimos para cada //tamaño
+                    // TODO: Buscar los valores mas optimos para cada tamaño
 
                     switch (size) {
                         case 1:
@@ -116,7 +116,7 @@ public class mundial {
                                 "[3] Editar algún valor.\n" +
                                 "[4] Salir");
 
-                        int hola = Utilidades.input.getInt("ingrese una opción");
+                        int hola = Utilidades.input.getInt("Ingrese una opción:");
 
                         switch (hola) {
                             case 1:
@@ -163,34 +163,68 @@ public class mundial {
 
                     }
                 case 3:
-                    String[][] partidos = Utilidades.partidos.partidosTabla();
-                    String[][] equipos = Utilidades.partidos.equiposTabla();
-
                     while (true) {
 
                         System.out.println();
                         System.out.println("[1] Mostrar partidos por grupos.\n" +
-                                "[2] Mostrar hora e integrantes.\n" +
+                                "[2] Mostrar hora e integrantes de un partido.\n" +
                                 "[3] Salir.\n");
 
-                        int suri = Utilidades.input.getInt("ingrese una opción");
+                        int suri = Utilidades.input.getInt("Ingrese una opción:");
                         switch (suri) {
                             case 1:
-                                Utilidades.partidos.mostrarPartidos(partidos);
+                                String[][] partidos;
+
+                                while (true) {
+                                    try {
+                                        String grupo = Utilidades.input.getString("Ingresa la letra del grupo:");
+
+                                        partidos = Utilidades.partidos.partidosGrupo(grupo);
+
+                                        break;
+
+                                    } catch (Exception e) {
+                                        System.out.println(e);
+                                        System.out.println("¡Ese grupo no ha sido encontrado!");
+                                    }
+                                }
+
+                                System.out.println("Los partidos en el grupo " + partidos[0][1] + " son:");
+
+                                for (int i = 0; i < partidos.length; i++) {
+                                    System.out.println(partidos[i][5] + " vs " + partidos[i][6] + " el dia " + partidos[i][3] + " a las " + partidos[i][4]);
+
+                                }
+
                                 break;
 
                             case 2:
-                                Utilidades.partidos.mostrarEquipos(equipos);
+                                String[] partido = new String[7];
+
+                                while (true) {
+                                    try {
+                                        String grupo = Utilidades.input.getString("Ingresa el código del partido:");
+
+                                        partido = Utilidades.partidos.getPartido(grupo);
+
+                                        break;
+
+                                    } catch (Exception e) {
+                                        System.out.println("¡Ese partido no ha sido encontrado!");
+                                    }
+                                }
+
+                                System.out.println("El partido " + partido[0] + " sera " + partido[5] + " vs " + partido[6] + " el dia " + partido[3] + " a " +
+                                        "las " + partido[4]);
+
                                 break;
 
                             case 3:
-                                System.out.println("Hasta luego");
                                 break;
                             default:
+                                System.out.println("¡Debes ingresar una opción valida!");
                                 break;
                         }
-
-                        break;
                     }
 
                 case 4:

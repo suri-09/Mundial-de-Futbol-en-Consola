@@ -2,10 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Utilidades {
 
@@ -178,39 +175,9 @@ public class Utilidades {
         System.out.print(COLORES[color - 1] + "   ");
     }
 
-    public static class input {
-
-        public static Scanner sc = new Scanner(System.in);
-
-        /**
-         * Imprime el prompt dada e intenta obtener el número entero de la consola,
-         * maneja errores.
-         *
-         * @param prompt Mensaje a mostrar al usuario.
-         */
-        public static int getInt(String prompt) {
-            int num;
-
-            while (true) {
-                try {
-                    System.out.print(prompt + " ");
-                    num = sc.nextInt();
-
-                    break;
-                } catch (InputMismatchException e) {
-                    sc.next(); // Limpia el buffer de Scanner
-
-                    System.out.println("Debes ingresar un numero valido!");
-                }
-            }
-
-            return num;
-        }
-    }
-
     public static void mostrarTabla(String[][] tabla, int contador, int mostrar) {
 
-        String[] arriba = { "Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts" };
+        String[] arriba = {"Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts"};
 
         for (int c = 0; c < mostrar; c++) {
 
@@ -231,6 +198,53 @@ public class Utilidades {
             break;
         }
 
+    }
+
+    public static class input {
+        /**
+         * Imprime el prompt dada e intenta obtener el número entero de la consola,
+         * maneja errores.
+         *
+         * @param prompt Mensaje a mostrar al usuario.
+         */
+        public static int getInt(String prompt) {
+
+            Scanner sc = new Scanner(System.in);
+
+            int num;
+
+            while (true) {
+                try {
+                    System.out.print(prompt + " ");
+                    num = sc.nextInt();
+
+                    break;
+                } catch (InputMismatchException e) {
+                    sc.next(); // Limpia el buffer de Scanner
+
+                    System.out.println("Debes ingresar un numero valido!");
+                }
+            }
+
+            return num;
+        }
+
+        public static String getString(String prompt) {
+
+            Scanner sc = new Scanner(System.in);
+
+            String str = null;
+
+            System.out.print(prompt + " ");
+
+            while (true) {
+                if (sc.hasNextLine()) {
+                    str = sc.nextLine();
+                    break;
+                }
+            }
+            return str;
+        }
     }
 
     public static class tablaPosiciones {
@@ -301,7 +315,6 @@ public class Utilidades {
 
     public static class partidos {
         private static final int columnas = 7;
-        private static final int colu = 7;
 
         public static String[][] mostrarPartidos() throws FileNotFoundException {
 
@@ -326,7 +339,7 @@ public class Utilidades {
 
             Scanner sc = new Scanner(new File("./equipos_mundial.csv"));
 
-            String[][] tabla = new String[TOTAL_PAISES][colu];
+            String[][] tabla = new String[TOTAL_PAISES][columnas];
 
             for (int i = 0; i < TOTAL_PAISES; i++) {
 
@@ -340,6 +353,71 @@ public class Utilidades {
             return tabla;
         }
 
+        public static String[][] partidosGrupo(String grupo) throws FileNotFoundException {
+
+            Scanner sc = new Scanner(new File("./partidos.csv"));
+
+            String[][] tabla = new String[TOTAL_PAISES][columnas];
+            String[][] partidos = new String[6][columnas];
+
+            for (int i = 0; i < TOTAL_PAISES; i++) {
+
+                String[] lineaActual = sc.nextLine().split(",");
+
+                tabla[i] = lineaActual;
+            }
+
+            sc.close();
+
+            try {
+                for (int i = 0; i < partidos.length; i++) {
+                    for (int j = 0; j < tabla.length; j++) {
+                        String grupoTabla = tabla[j][1];
+
+                        if (grupoTabla.equalsIgnoreCase(grupo)) {
+                            partidos[i] = tabla[j];
+                            i += 1;
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+            return partidos;
+
+        }
+
+        public static String[] getPartido(String codigo) throws FileNotFoundException {
+
+            Scanner sc = new Scanner(new File("./partidos.csv"));
+
+            String[][] tabla = new String[TOTAL_PAISES][columnas];
+            String[] partido = new String[columnas];
+
+            for (int i = 0; i < TOTAL_PAISES; i++) {
+
+                String[] lineaActual = sc.nextLine().split(",");
+
+                tabla[i] = lineaActual;
+            }
+
+            sc.close();
+
+            try {
+                for (int i = 0; i < tabla.length; i++) {
+                    if (codigo.equalsIgnoreCase(tabla[i][0])) {
+                        partido = tabla[i];
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+            return partido;
+
+        }
     }
 
 }
