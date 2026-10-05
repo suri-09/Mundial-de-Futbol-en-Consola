@@ -17,7 +17,8 @@ public class mundial {
 
             System.out.println("[1] Ver la bandera de un país.\n" +
                     "[2] Ver o editar la tabla de posiciones.\n" +
-                    "[3] Salir");
+                    "[3] Ver partidos e integrantes por grupos.\n" +
+                    "[4] Salir");
 
             int opcion = Utilidades.input.getInt("ingrese una opción");
 
@@ -121,7 +122,7 @@ public class mundial {
                             case 1:
                                 if (contador + mostrar < tabla.length) {
                                     contador = contador + 12;
-                                    continue;
+                                    // continue;
                                 } else {
                                     System.out.println("Ya estas mostrando todas las opciones");
                                 }
@@ -131,30 +132,25 @@ public class mundial {
                             case 2:
                                 if (contador - 12 >= 0) {
                                     contador = contador - 12;
-                                    continue;
+                                    // continue;
                                 } else {
                                     System.out.println("No hay menos opciones");
                                 }
 
+                                break;
                             case 3:
 
                                 int fila = Utilidades.input.getInt("ingrese el número de la fila que desea cambiar")
                                         - 1;
                                 int col = Utilidades.input.getInt("ingrese el número de la columna que desea cambiar")
                                         - 1;
+                                int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
 
-                                if (col > 1) {
-                                    int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
-                                    try {
-                                        Utilidades.tablaPosiciones.editTabla(fila, col, valor);
-                                        tabla = Utilidades.tablaPosiciones.getTabla();
-                                    } catch (IOException e) {
-                                        System.out.println("error" + e.getMessage());
-                                    }
-                                }
-
-                                else {
-                                    System.out.println("No es un dato posible de cambiar");
+                                try {
+                                    Utilidades.tablaPosiciones.editTabla(fila, col, valor);
+                                    tabla = Utilidades.tablaPosiciones.getTabla();
+                                } catch (IOException e) {
+                                    System.out.println("error" + e.getMessage());
                                 }
 
                                 break;
@@ -166,8 +162,38 @@ public class mundial {
                         }
 
                     }
-
                 case 3:
+                    String[][] partidos = Utilidades.partidos.partidosTabla();
+                    String[][] equipos = Utilidades.partidos.equiposTabla();
+
+                    while (true) {
+
+                        System.out.println();
+                        System.out.println("[1] Mostrar partidos por grupos.\n" +
+                                "[2] Mostrar hora e integrantes.\n" +
+                                "[3] Salir.\n");
+
+                        int suri = Utilidades.input.getInt("ingrese una opción");
+                        switch (suri) {
+                            case 1:
+                                Utilidades.partidos.mostrarPartidos(partidos);
+                                break;
+
+                            case 2:
+                                Utilidades.partidos.mostrarEquipos(equipos);
+                                break;
+
+                            case 3:
+                                System.out.println("Hasta luego");
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    }
+
+                case 4:
                     System.out.println("¡Hasta luego!");
                     System.exit(0);
                     break;

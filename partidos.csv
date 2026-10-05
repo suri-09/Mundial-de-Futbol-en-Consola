@@ -1,0 +1,73 @@
+﻿
+M01,A,Jornada 1,2026-06-11,15:00,Mexico,Sudafrica
+M02,A,Jornada 1,2026-06-11,19:00,Corea del Sur,Chequia
+M03,A,Jornada 2,2026-06-18,12:00,Mexico,Corea del Sur
+M04,A,Jornada 2,2026-06-18,18:00,Chequia,Sudafrica
+M05,A,Jornada 3,2026-06-24,16:00,Chequia,Mexico
+M06,A,Jornada 3,2026-06-24,16:00,Sudafrica,Corea del Sur
+M07,B,Jornada 1,2026-06-12,13:00,Canada,Bosnia y herzegovina
+M08,B,Jornada 1,2026-06-12,19:00,Qatar,Suiza
+M09,B,Jornada 2,2026-06-18,15:00,Canada,Qatar
+M10,B,Jornada 2,2026-06-18,21:00,Suiza,Bosnia y herzegovina
+M11,B,Jornada 3,2026-06-24,19:00,Suiza,Canada
+M12,B,Jornada 3,2026-06-24,19:00,Bosnia y herzegovina,Qatar
+M13,C,Jornada 1,2026-06-13,12:00,Brasil,Marruecos
+M14,C,Jornada 1,2026-06-13,18:00,Haiti,Escocia
+M15,C,Jornada 2,2026-06-19,15:00,Brasil,Haiti
+M16,C,Jornada 2,2026-06-19,21:00,Escocia,Marruecos
+M17,C,Jornada 3,2026-06-25,16:00,Escocia,Brasil
+M18,C,Jornada 3,2026-06-25,16:00,Marruecos,Haiti
+M19,D,Jornada 1,2026-06-12,16:00,Estados Unidos,Paraguay
+M20,D,Jornada 1,2026-06-12,21:00,Australia,Turquia
+M21,D,Jornada 2,2026-06-19,12:00,Estados Unidos,Australia
+M22,D,Jornada 2,2026-06-19,18:00,Turquia,Paraguay
+M23,D,Jornada 3,2026-06-25,19:00,Turquia,Estados Unidos
+M24,D,Jornada 3,2026-06-25,19:00,Paraguay,Australia
+M25,E,Jornada 1,2026-06-14,13:00,Alemania,Curazao
+M26,E,Jornada 1,2026-06-14,19:00,Costa de Marfil,Ecuador
+M27,E,Jornada 2,2026-06-20,12:00,Alemania,Costa de Marfil
+M28,E,Jornada 2,2026-06-20,18:00,Ecuador,Curazao
+M29,E,Jornada 3,2026-06-26,16:00,Ecuador,Alemania
+M30,E,Jornada 3,2026-06-26,16:00,Curazao,Costa de Marfil
+M31,F,Jornada 1,2026-06-14,16:00,Paises Bajos,Japon
+M32,F,Jornada 1,2026-06-14,21:00,Suecia,Tunez
+M33,F,Jornada 2,2026-06-20,15:00,Paises Bajos,Suecia
+M34,F,Jornada 2,2026-06-20,21:00,Tunez,Japon
+M35,F,Jornada 3,2026-06-26,19:00,Tunez,Paises Bajos
+M36,F,Jornada 3,2026-06-26,19:00,Japon,Suecia
+M37,G,Jornada 1,2026-06-15,12:00,Belgica,Egipto
+M38,G,Jornada 1,2026-06-15,18:00,Iran,Nueva Zelanda
+M39,G,Jornada 2,2026-06-21,13:00,Belgica,Iran
+M40,G,Jornada 2,2026-06-21,19:00,Nueva Zelanda,Egipto
+M41,G,Jornada 3,2026-06-27,16:00,Nueva Zelanda,Belgica
+M42,G,Jornada 3,2026-06-27,16:00,Egipto,Iran
+M43,H,Jornada 1,2026-06-15,15:00,España,Cabo Verde
+M44,H,Jornada 1,2026-06-15,21:00,Arabia Saudi,Uruguay
+M45,H,Jornada 2,2026-06-21,16:00,España,Arabia Saudi
+M46,H,Jornada 2,2026-06-21,21:00,Uruguay,Cabo Verde
+M47,H,Jornada 3,2026-06-27,19:00,Uruguay,España
+M48,H,Jornada 3,2026-06-27,19:00,Cabo Verde,Arabia Saudi
+M49,I,Jornada 1,2026-06-16,13:00,Francia,Senegal
+M50,I,Jornada 1,2026-06-16,19:00,Irak,Noruega
+M51,I,Jornada 2,2026-06-22,12:00,Francia,Irak
+M52,I,Jornada 2,2026-06-22,18:00,Noruega,Senegal
+M53,I,Jornada 3,2026-06-27,13:00,Noruega,Francia
+M54,I,Jornada 3,2026-06-27,13:00,Senegal,Irak
+M55,J,Jornada 1,2026-06-16,16:00,Argentina,Argelia
+M56,J,Jornada 1,2026-06-16,21:00,Austria,Jordania
+M57,J,Jornada 2,2026-06-22,15:00,Argentina,Austria
+M58,J,Jornada 2,2026-06-22,21:00,Jordania,Argelia
+M59,J,Jornada 3,2026-06-27,21:00,Jordania,Argentina
+M60,J,Jornada 3,2026-06-27,21:00,Argelia,Austria
+M61,K,Jornada 1,2026-06-17,13:00,Portugal,Congo RD
+M62,K,Jornada 1,2026-06-17,19:00,Uzbekistan,Colombia
+M63,K,Jornada 2,2026-06-23,13:00,Portugal,Uzbekistan
+M64,K,Jornada 2,2026-06-23,19:00,Colombia,Congo RD
+M65,K,Jornada 3,2026-06-26,13:00,Colombia,Portugal
+M66,K,Jornada 3,2026-06-26,13:00,Congo RD,Uzbekistan
+M67,L,Jornada 1,2026-06-17,16:00,Inglaterra,Croacia
+M68,L,Jornada 1,2026-06-17,21:00,Ghana,Panama
+M69,L,Jornada 2,2026-06-23,16:00,Inglaterra,Ghana
+M70,L,Jornada 2,2026-06-23,21:00,Panama,Croacia
+M71,L,Jornada 3,2026-06-26,21:00,Panama,Inglaterra
+M72,L,Jornada 3,2026-06-26,21:00,Croacia,Ghana

@@ -2,7 +2,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Utilidades {
@@ -279,7 +281,7 @@ public class Utilidades {
 
             sc.close();
 
-            tabla[fila][col] = "" + valor;
+            tabla[fila][col + 1] = "" + valor;
 
             FileWriter fw = new FileWriter("./posiciones.csv");
 
@@ -296,4 +298,48 @@ public class Utilidades {
             fw.close();
         }
     }
+
+    public static class partidos {
+        private static final int columnas = 7;
+        private static final int colu = 7;
+
+        public static String[][] mostrarPartidos() throws FileNotFoundException {
+
+            Scanner sc = new Scanner(new File("./partidos.csv"));
+
+            String[][] tabla = new String[TOTAL_PAISES][columnas];
+
+            for (int i = 0; i < TOTAL_PAISES; i++) {
+
+                String[] lineaActual = sc.nextLine().split(",");
+
+                tabla[i] = lineaActual;
+            }
+
+            sc.close();
+
+            return tabla;
+
+        }
+
+        public static String[][] mostrarEquipos() throws FileNotFoundException {
+
+            Scanner sc = new Scanner(new File("./equipos_mundial.csv"));
+
+            String[][] tabla = new String[TOTAL_PAISES][colu];
+
+            for (int i = 0; i < TOTAL_PAISES; i++) {
+
+                String[] lineaActual = sc.nextLine().split(",");
+
+                tabla[i] = lineaActual;
+            }
+
+            sc.close();
+
+            return tabla;
+        }
+
+    }
+
 }
