@@ -177,7 +177,7 @@ public class Utilidades {
 
     public static void mostrarTabla(String[][] tabla, int contador, int mostrar) {
 
-        String[] arriba = {"Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts"};
+        String[] arriba = { "Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts" };
 
         for (int c = 0; c < mostrar; c++) {
 
@@ -297,6 +297,25 @@ public class Utilidades {
 
             tabla[fila][col + 1] = "" + valor;
 
+            for (fila = 0; fila < tabla.length; fila++) {
+                // DG = GF - GC ----> DG = 7 , GF = 5 , GC = 6
+                int GF = Integer.parseInt(tabla[fila][5]);
+                int GC = Integer.parseInt(tabla[fila][6]);
+                int GD = GF - GC;
+
+                tabla[fila][7] = String.valueOf(GD);
+            }
+            for (fila = 0; fila < tabla.length; fila++) {
+                // Pts = (PG * 3) + (PE * 1 ) ---> pts = 10
+                int PG = Integer.parseInt(tabla[fila][2]);
+                int PE = Integer.parseInt(tabla[fila][3]);
+                int pts = (PG * 3) + (PE * 1);
+
+                tabla[fila][10] = String.valueOf(pts);
+
+            }
+            // PJ = PG + PE + PP ---> PJ = 1, PG = 2, PE = 3, PP = 4
+
             FileWriter fw = new FileWriter("./posiciones.csv");
 
             String[] lineas = new String[TOTAL_PAISES];
@@ -310,6 +329,7 @@ public class Utilidades {
             fw.write(archivo);
 
             fw.close();
+
         }
     }
 

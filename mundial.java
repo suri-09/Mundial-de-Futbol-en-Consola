@@ -146,13 +146,14 @@ public class mundial {
                                         - 1;
                                 int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
 
-                                if (valor < 20) {
+                                if (valor < 20 && col != 10 && col != 7) {
                                     try {
                                         Utilidades.tablaPosiciones.editTabla(fila, col, valor);
                                         tabla = Utilidades.tablaPosiciones.getTabla();
                                     } catch (IOException e) {
                                         System.out.println("error" + e.getMessage());
                                     }
+
                                 } else {
                                     System.out.println("El valor no es permitido");
                                 }
@@ -166,8 +167,11 @@ public class mundial {
                         }
 
                     }
+                    break;
+
                 case 3:
-                    while (true) {
+                    boolean centine = true;
+                    while (centine) {
 
                         System.out.println();
                         System.out.println("[1] Mostrar partidos por grupos.\n" +
@@ -226,6 +230,7 @@ public class mundial {
                                 break;
 
                             case 3:
+                                centine = false;
                                 break;
                             default:
                                 System.out.println("¡Debes ingresar una opción valida!");
