@@ -309,12 +309,23 @@ public class Utilidades {
                 // Pts = (PG * 3) + (PE * 1 ) ---> pts = 10
                 int PG = Integer.parseInt(tabla[fila][2]);
                 int PE = Integer.parseInt(tabla[fila][3]);
-                int pts = (PG * 3) + (PE * 1);
+                int pts = (PG * 3) + PE;
 
                 tabla[fila][10] = String.valueOf(pts);
 
             }
-            // PJ = PG + PE + PP ---> PJ = 1, PG = 2, PE = 3, PP = 4
+
+            for (fila = 0; fila < tabla.length; fila++) {
+                // PJ = PG + PE + PP ---> PJ = 1, PG = 2, PE = 3, PP = 4
+                int PG = Integer.parseInt(tabla[fila][2]);
+                int PE = Integer.parseInt(tabla[fila][3]);
+                int PP = Integer.parseInt(tabla[fila][4]);
+
+                int PJ = PG + PE + PP;
+
+                tabla[fila][1] = String.valueOf(PJ);
+
+            }
 
             FileWriter fw = new FileWriter("./posiciones.csv");
 

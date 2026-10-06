@@ -116,6 +116,7 @@ public class mundial {
                                 "[3] Editar algún valor.\n" +
                                 "[4] Salir");
 
+                        System.out.println();
                         int hola = Utilidades.input.getInt("Ingrese una opción:");
 
                         switch (hola) {
@@ -146,7 +147,9 @@ public class mundial {
                                         - 1;
                                 int valor = Utilidades.input.getInt("ingrese el valor al que desea cambiar");
 
-                                if (valor < 20 && col != 10 && col != 7) {
+                                System.out.println();
+
+                                if (valor <= 20 && valor >= 0 && col != 10 && col != 7 && col != 1) {
                                     try {
                                         Utilidades.tablaPosiciones.editTabla(fila, col, valor);
                                         tabla = Utilidades.tablaPosiciones.getTabla();
@@ -154,8 +157,11 @@ public class mundial {
                                         System.out.println("error" + e.getMessage());
                                     }
 
-                                } else {
+                                }
+
+                                else {
                                     System.out.println("El valor no es permitido");
+                                    System.out.println();
                                 }
 
                                 break;
