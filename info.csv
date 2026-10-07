@@ -1,49 +1,48 @@
-Selección,Capital,Participaciones en mundiales,Titular 1,Titular 2,Titular 3,Titular 4,Titular 5,Titular 6,Titular 7,Titular 8,Titular 9,Titular 10,Titular 11,NULL
-Mexico,Ciudad de Mexico,18,Luis Malagón,Jorge Sánchez,César Montes,Johan Vásquez,Jesús Gallardo,Edson Álvarez,Luis Chávez,Erick Sánchez,Hirving Lozano,Julián Quiñones,Santiago Giménez,NULL
-Marruecos,Rabat,7,Yassine Bounou,Achraf Hakimi,Nayef Aguerd,Romain Saïss,Noussair Mazraoui,Sofyan Amrabat,Azzedine Ounahi,Brahim Díaz,Hakim Ziyech,Youssef En-Nesyri,Sofiane Boufal,NULL
-Noruega,Oslo,4,Ørjan Nyland,Julian Ryerson,Kristoffer Ajer,Torbjørn Heggem,David Møller Wolfe,Sander Berge,Patrick Berg,Martin Ødegaard,Alexander Sørloth,Antonio Nusa,Erling Haaland,NULL
-Austria,Viena,8,Alexander Schlager,Stefan Posch,Kevin Danso,David Alaba,Maximilian Wöber,Nicolas Seiwald,Xaver Schlager,Marcel Sabitzer,Christoph Baumgartner,Michael Gregoritsch,Marko Arnautović,NULL
-Bosnia y herzegovina,Sarajevo,2,Nikola Vasilj,Amar Dedić,Dennis Hadžikadunić,Tarik Muharemović,Sead Kolašinac,Benjamin Tahirović,Armin Gigović,Ivan Bašić,Esmir Bajraktarević,Ermedin Demirović,Edin Džeko,NULL
-Tunez,Tunez,7,Aymen Dahmen,Yan Valery,Montassar Talbi,Omar Rekik,Ali Abdi,Ellyes Skhiri,Rani Khedira,Hannibal Mejbri,Elias Achouri,Ismaël Gharbi,Hazem Mastouri,NULL
-Inglaterra,Londres,17,Jordan Pickford,Djed Spence,Ezri Konsa,Marc Guéhi,Nico O'Riley,Declan Rice,Elliot Anderson,Buyako Saka,Jude Bellingham,Anthony Gordon,Harry Kane,NULL
-España,Madrid,17,Unai Simon,Pedro Porro,Pau Cubarsi,Aymeric Laporte,Marc Cucurella,Rodri Hernandez,Dani Olmo,Fabián Ruiz,Lamine Yamal,Mikel Oyarzabal,Álex Baena,NULL
-Francia,París,17,Mike Maignan,Jules Koundé,Ibrahima Konaté,Dayot Upamecano,Theo Hernández,Aurélien Tchuamení,Adrien Rabiot,Ousmane Dembélé,Michael Olise,Désiré Doué,Kylian Mbappé,NULL
-Cabo Verde,Praia,1,Vozinha,Steven Moeira,Roberto Lopes,Diney,Sidny Lopes Cabral,Kevin Pina,Laros Duarte,Ryan Mendes,Jamiro Monteiro,Jovane Cabral,Davilon Livramento,NULL
-Corea del Sur,Seúl,12,Kim Seung-gyu,Seol Young-woo,Kim Min-jae,Cho Yu-min,Lee Myung-jae,Hwang In-beom,Paik Seung-ho,Lee Kang-in,Lee Jae-sung,Hwang Hee-chan,Son Heung-min,NULL
-Congo RD,Kinhasa,2,Lionel Mpasi,Aaron Wan-Bissaka,Chancel Mbemba,Axel Tuanzebe,Joris Kayembe,Samuel Moutoussamy,Charles Pickel,Edo Kayembe,Yoane Wissa,Cédric Bakambu,Meschack Elia,NULL
-Ecuador,Quito,5,Hernán Galíndez,Ángelo Preciado,Joel Ordóñez,Willian Pacho,Piero Hincapié,Moisés Caicedo,Pedro Vite,John Yeboah,Nilson Angulo,Gonzalo Plata,Enner Valencia,NULL
-Alemania,Berlín,21,Manuel Neuer,Joshua Kimmich,Jonathan Tah,Antonio Rüdiger,David Raum,Felix Nmecha,Aleksandar Pavlović,Leroy Sané,Jamal Musiala,Florian Wirtz,Kai Havertz,NULL
-Belgica,Bruselas,14,Thibaut Courtois,Timothy Castagne,Brandon Mechele,Arthur Theate,Maxim De Cuyper,Youri Tielemans,Hans Vanaken,Jérémy Doku,Kevin De Bruyne,Leandro Trossard,Charles De Ketelaere,NULL
-Chequia,Praga,10,Matěj Kovář,Vladimír Coufal,Štěpán Chaloupek,Robin Hranáč,Ladislav Krejčí,Jaroslav Zelený,Tomáš Souček,Lukáš Provod,Alexandr Sojka,Pavel Šulc,Patrik Schick,NULL
-Japon,Tokio,8,Zion Suzuki,Hiroki Itō,Kō Itakura,Takehiro Tomiyasu,Ritsu Dōan,Daichi Kamada,Kaishu Sano,Keito Nakamura,Takefusa Kubo,Junya Itō,Ayase Ueda,NULL
-Sudafrica,Pretoria,4,Ronwen Williams,Khuliso Mudau,Thabiso Sesane,Nkosinathi Mbokazi,Aubrey Modiba,Teboho Mokoena,Sphephelo Sithole,Thalente Mbatha,Oswin Appollis,Tshepang Moremi,Lyle Foster,NULL
-Turquia,Ankara,3,Uğurcan Çakır,Zeki Çelik,Merih Demiral,Abdülkerim Bardakcı,Ferdi Kadıoğlu,İsmail Yüksek,Hakan Çalhanoğlu,Orkun Kökçü,Arda Güler,Barış Alper Yılmaz,Kenan Yıldız,NULL
-Colombia,Bogotá,7,Camilo Vargas,Daniel Muñoz,Dávinson Sánchez,Jhon Lucumí,Johan Mojica,Jefferson Lerma,Richard Ríos,Jhon Arias,James Rodríguez,Luis Díaz,Jhon Córdoba,NULL
-Escocia,Edimburgo,2,Angus Gunn,Ralston Anthony,Ryan Porteous,Grant Hanley,Kieran Tierney,Andrew Robertson,Billy Gilmour,Callum McGregor,Scott McTominay,John McGinn,Che Adams,NULL
-Paraguay,Asunción,5,Carlos Coronel,Iván Ramírez,Gustavo Gómez,Omar Alderete,Matías Espinoza,Andrés Cubas,Mathías Villasanti,Damián Bobadilla,Miguel Almirón,Julio Enciso,Alex Arce,NULL
-Suiza,Berna,7,Yann Sommer,Silvan Widmer,Manuel Akanji,Fabian Schär,Ricardo Rodríguez,Granit Xhaka,Remo Freuler,Michel Aebischer,Dan Ndoye,Breel Embolo,Ruben Vargas,NULL
-Egipto,El Cairo,2,Mohamed El Shenawy,Mohamed Hany,Rami Rabia,Mohamed Abdelmonem,Mohamed Hamdy,Marwan Attia,Hamdy Fathi,Zizo,Mohamed Salah,Mostafa Mohamed,Trezeguet,NULL
-Portugal,Lisboa,7,Diogo Costa,Diogo Dalot,Rúben Dias,Pepe,Nuno Mendes,João Palhinha,Vitinha,Bruno Fernandes,Bernardo Silva,Cristiano Ronaldo,Rafael Leão,NULL
-Haiti,Puerto Príncipe,1,Johny Placide,Carlens Arcus,Ricardo Adé,Jean-Kévin Duverne,Alex Christian,Leverton Pierre,Danley Jean Jacques,Bryan Alceus,Duckens Nazon,Frantzdy Pierrot,Louicius Don Deedson,NULL
-Argelia,Argel,3,Amine Gouiri,Anthony Mandrea,Yousef Atal,Aïssa Mandi,Ramy Bensebaini,Rayan Aït-Nouri,Nabil Bentaleb,Ismaël Bennacer,Houssem Aouar,Riyad Mahrez,Baghdad Bounedjah,NULL
-Arabia Saudi,Riad,7,Mohammed Al-Owais,Abdulelah Alamri,Saud Abdulhamid,Moteb Al Harbi,Hassan Altambakti,Mohammed Abu Al Shamat,Mohammed Kanno,Abdullah Alkhaibari,Salem Al Dawsari,Firas Al Breikan,Musab Al Juwayr,NULL
-Croacia,Zagreb,7,Dominik Livaković,Josip Stanišić,Josip Šutalo,Joško Gvardiol,Borna Sosa,Luka Modrić,Mateo Kovačić,Petar Sučić,Andrej Kramarić,Ante Budimi,Ivan Perišić,NULL
-Argentina,Buenos Aires,19,Emiliano Martinez,Nahuel Molina,Cristian  Romero,Nicolás Otamendi,Nicolás Tagliafico,Rodrigo De Paul,Enzo Fernández,Alexis Mac Allister,Lionel Messi,Lautaro Martínez,Julián Álvarez,NULL
-Costa de Marfil,Yamusukro,11,Yahia Fofana,Wilfried Singo,Odilon Kossounou,Evan Ndicka,Ghislain Konan,Franck Kessié,Jean Michaël Seri,Seko Fofana,Simon Adingra,Sébastien Haller,Nicolas Pépé,NULL
-Paises Bajos,Ámsterdam,12,Bart Verbruggen,Denzel Dumfries,Stefan de Vrij,Virgil van Dijk,Nathan Aké,Jerdy Schouten,Tijjani Reijnders,Xavi Simons,Jeremie Frimpong,Memphis Depay,Cody Gakpo,NULL
-Brasil,Brasilia,23,Alisson,Danilo,Marquinhos,Gabriel Magalhães,Guilherme Arana,Bruno Guimarães,Lucas Paquetá,Rodrygo,Raphinha,Endrick,Vinícius Jr.,NULL
-Qatar,Doha,2,Meshaal Barsham,Pedro Miguel,Lucas Mendes,Boualem Khoukh,Tarek Salman,Fatai Mohed,Ahmed Fathy,Jassem Gaber,Hassan Al-Haydos,Almoez Ali,Akram Afif,NULL
-Estados Unidos,Washington D.C.,12,Matt Turner,Joe Scally,Chris Richards,Tim Ream,Antonee Robinson,Weston McKennie,Tyler Adams,Yunus Musah,Timothy Weah,Folarin Balogun,Christian Pulisic,NULL
-Uruguay,Montevideo,15,Sergio Rochet,Nahitan Nández,Ronald Araújo,José María Giménez,Mathías Olivera,Manuel Ugarte,Federico Valverde,Rodrigo Bentancur,Facundo Pellistri,Darwin Núñez,Maximiliano Araújo,NULL
-Senegal,Dakar,4,Édouard Mendy,Formose Mendy,Kalidou Koulibaly,Moussa Niakhaté,Ismail Jakobs,Pape Matar Sarr,Idrissa Gueye,Lamine Camara,Ismaïla Sarr,Nicolas Jackson,Sadio Mané,NULL
-Jordania,Amán,1,Yazan Al-Naimat,Abdallah Nasib,Yazan Al-Arab,Salem Al-Ajalin,Ehsan Haddad,Nizar Al-Rashdan,Noor Al-Rawabdeh,Mahmoud Al-Mardi,Mousa Al-Tamari,Yazan Al-Naimat,Ali Olwan,NULL
-Canada,Ottawa,3,Maxime Crépeau,Alistair Johnston,Moïse Bombito,Derek Cornelius,Alphonso Davies,Jonathan Osorio,Stephen Eustáquio,Ismaël Koné,Tajon Buchanan,Jonathan David,Cyle Larin,NULL
-Australia,Canberra,7,Mathew Ryan,Lewis Miller,Harry Souttar,Kye Rowles,Aziz Behich,Connor Metcalfe,Jackson Irvine,Aiden O'Neill,Martin Boyle,Kusini Yengi,Craig Goodwin,NULL
-Nueva Zelanda,Wellington,3,Max Crocombe,Tim Payne,Tyler Bindon,Nando Pijnaker,Liberato Cacace,Joe Bell,Marko Stamenic,Matthew Garbett,Elijah Just,Chris Wood,Ben Old,NULL
-Panama,Ciudad de Panamá,2,Orlando Mosquera,Michael Amir Murillo,Edgardo Fariña,José Córdoba,Roderick Miller,Eric Davis,Adalberto Carrasquilla,Cristian Martínez,Yoel Bárcenas,José Fajardo,José Luis Rodríguez,NULL
-Curazao,Willemstad,1,Eloy Room,Nathangelo Markelo,Sherel Floranus,Cuco Martina,Jurien Gaari,Vurnon Anita,Juninho Bacuna,Leandro Bacuna,Brandley Kuwas,Rangelo Janga,Kenji Gorré,NULL
-Suecia,Estocolmo,13,Viktor Johansson,Emil Krafth,Isak Hien,Victor Lindelöf,Ludwig Augustinsson,Jens Cajuste,Anton Salétros,Dejan Kulusevski,Alexander Isak,Anthony Elanga,Viktor Gyökeres,NULL
-Iran,Teherán,7,Alireza Beiranvand,Ramin Rezaeian,Hossein Kanaanizadegan,Shojae Khalilzadeh,Milad Mohammadi,Saeid Ezatolahi,Saman Ghoddos,Ahmad Nourollahi,Alireza Jahanbakhsh,Mehdi Taremi,Sardar Azmoun,NULL
-Uzbekistan,Tashkent,1,Utkir Yusupov,Husniddin Alikulov,Abdukodir Khusanov,Umar Eshmurodov,Sherzod Nasrullaev,Otabek Shukurov,Odiljon Hamrobekov,Azizbek Turgunboev,,Jaloliddin Masharipov,Abbasbek Fayzullaev,Eldor Shomurodov
-Irak,Bagdad,2,Jalal Hassan,Hussein Ali,Saad Natiq,Rebin Sulaka,Merchas Doski,Amir Al-Ammari,Osama Rashid,Zidane Iqbal,Ibrahim Bayesh,Aymen Hussein,Ali Jasim,NULL
-Ghana,Acra,5,Lawrence Ati-Zigi,Alidu Seidu,Alexander Djiku,Mohammed Salisu,Gideon Mensah,Thomas Partey,Salis Abdul Samed,Mohammed Kudus,Ernest Nuamah,Iñaki Williams,Jordan Ayew,NULL
+Austria,Viena,8,Alexander Schlager,Stefan Posch,Kevin Danso,David Alaba,Maximilian Wöber,Nicolas Seiwald,Xaver Schlager,Marcel Sabitzer,Christoph Baumgartner,Michael Gregoritsch,NULL
+Mexico,Ciudad de Mexico,18,Luis Malagón,Jorge Sánchez,César Montes,Johan Vásquez,Jesús Gallardo,Edson Álvarez,Luis Chávez,Erick Sánchez,Hirving Lozano,Julián Quiñones,NULL
+Marruecos,Rabat,7,Yassine Bounou,Achraf Hakimi,Nayef Aguerd,Romain Saïss,Noussair Mazraoui,Sofyan Amrabat,Azzedine Ounahi,Brahim Díaz,Hakim Ziyech,Youssef En-Nesyri,NULL
+Noruega,Oslo,4,Ørjan Nyland,Julian Ryerson,Kristoffer Ajer,Torbjørn Heggem,David Møller Wolfe,Sander Berge,Patrick Berg,Martin Ødegaard,Alexander Sørloth,Antonio Nusa,NULL
+Bosnia y herzegovina,Sarajevo,2,Nikola Vasilj,Amar Dedić,Dennis Hadžikadunić,Tarik Muharemović,Sead Kolašinac,Benjamin Tahirović,Armin Gigović,Ivan Bašić,Esmir Bajraktarević,Ermedin Demirović,NULL
+Tunez,Tunez,7,Aymen Dahmen,Yan Valery,Montassar Talbi,Omar Rekik,Ali Abdi,Ellyes Skhiri,Rani Khedira,Hannibal Mejbri,Elias Achouri,Ismaël Gharbi,NULL
+Inglaterra,Londres,17,Jordan Pickford,Djed Spence,Ezri Konsa,Marc Guéhi,Nico O'Riley,Declan Rice,Elliot Anderson,Buyako Saka,Jude Bellingham,Anthony Gordon,NULL
+España,Madrid,17,Unai Simon,Pedro Porro,Pau Cubarsi,Aymeric Laporte,Marc Cucurella,Rodri Hernandez,Dani Olmo,Fabián Ruiz,Lamine Yamal,Mikel Oyarzabal,NULL
+Francia,París,17,Mike Maignan,Jules Koundé,Ibrahima Konaté,Dayot Upamecano,Theo Hernández,Aurélien Tchuamení,Adrien Rabiot,Ousmane Dembélé,Michael Olise,Désiré Doué,NULL
+Cabo Verde,Praia,1,Vozinha,Steven Moeira,Roberto Lopes,Diney,Sidny Lopes Cabral,Kevin Pina,Laros Duarte,Ryan Mendes,Jamiro Monteiro,Jovane Cabral,NULL
+Corea del Sur,Seúl,12,Kim Seung-gyu,Seol Young-woo,Kim Min-jae,Cho Yu-min,Lee Myung-jae,Hwang In-beom,Paik Seung-ho,Lee Kang-in,Lee Jae-sung,Hwang Hee-chan,NULL
+Congo RD,Kinshasa,2,Lionel Mpasi,Aaron Wan-Bissaka,Chancel Mbemba,Axel Tuanzebe,Joris Kayembe,Samuel Moutoussamy,Charles Pickel,Edo Kayembe,Yoane Wissa,Cédric Bakambu,NULL
+Ecuador,Quito,5,Hernán Galíndez,Ángelo Preciado,Joel Ordóñez,Willian Pacho,Piero Hincapié,Moisés Caicedo,Pedro Vite,John Yeboah,Nilson Angulo,Gonzalo Plata,NULL
+Alemania,Berlín,21,Manuel Neuer,Joshua Kimmich,Jonathan Tah,Antonio Rüdiger,David Raum,Felix Nmecha,Aleksandar Pavlović,Leroy Sané,Jamal Musiala,Florian Wirtz,NULL
+Belgica,Bruselas,14,Thibaut Courtois,Timothy Castagne,Brandon Mechele,Arthur Theate,Max De Cuyper,Youri Tielemans,Hans Vanaken,Jérémy Doku,Kevin De Bruyne,Leandro Trossard,NULL
+Chequia,Praga,10,Matěj Kovář,Vladimír Coufal,Štěpán Chaloupek,Robin Hranáč,Ladislav Krejčí,Jaroslav Zelený,Tomáš Souček,Lukáš Provod,Alexandr Sojka,Pavel Šulc,NULL
+Japon,Tokio,8,Zion Suzuki,Hiroki Itō,Kō Itakura,Takehiro Tomiyasu,Ritsu Dōan,Daichi Kamada,Kaishu Sano,Keito Nakamura,Takefusa Kubo,Junya Itō,NULL
+Sudafrica,Pretoria,4,Ronwen Williams,Khuliso Mudau,Thabiso Sesane,Nkosinathi Mbokazi,Aubrey Modiba,Teboho Mokoena,Sphephelo Sithole,Thalente Mbatha,Oswin Appollis,Tshepang Moremi,NULL
+Turquia,Ankara,3,Uğurcan Çakır,Zeki Çelik,Merih Demiral,Abdülkerim Bardakcı,Ferdi Kadıoğlu,İsmail Yüksek,Hakan Çalhanoğlu,Orkun Kökçü,Arda Güler,Barış Alper Yılmaz,NULL
+Colombia,Bogotá,7,Camilo Vargas,Daniel Muñoz,Dávinson Sánchez,Jhon Lucumí,Johan Mojica,Jefferson Lerma,Richard Ríos,Jhon Arias,James Rodríguez,Luis Díaz,NULL
+Escocia,Edimburgo,2,Angus Gunn,Ralston Anthony,Ryan Porteous,Grant Hanley,Kieran Tierney,Andrew Robertson,Billy Gilmour,Callum McGregor,Scott McTominay,John McGinn,NULL
+Paraguay,Asunción,5,Carlos Coronel,Iván Ramírez,Gustavo Gómez,Omar Alderete,Matías Espinoza,Andrés Cubas,Mathías Villasanti,Damián Bobadilla,Miguel Almirón,Julio Enciso,NULL
+Suiza,Berna,7,Yann Sommer,Silvan Widmer,Manuel Akanji,Fabian Schär,Ricardo Rodríguez,Granit Xhaka,Remo Freuler,Michel Aebischer,Dan Ndoye,Breel Embolo,NULL
+Egipto,El Cairo,2,Mohamed El Shenawy,Mohamed Hany,Rami Rabia,Mohamed Abdelmonem,Mohamed Hamdy,Marwan Attia,Hamdy Fathi,Zizo,Mohamed Salah,Mostafa Mohamed,NULL
+Portugal,Lisboa,7,Diogo Costa,Diogo Dalot,Rúben Dias,Pepe,Nuno Mendes,João Palhinha,Vitinha,Bruno Fernandes,Bernardo Silva,Cristiano Ronaldo,NULL
+Haiti,Puerto Príncipe,1,Johny Placide,Carlens Arcus,Ricardo Adé,Jean-Kévin Duverne,Alex Christian,Leverton Pierre,Danley Jean Jacques,Bryan Alceus,Duckens Nazon,Frantzdy Pierrot,NULL
+Argelia,Argel,3,Amine Gouiri,Anthony Mandrea,Yousef Atal,Aïssa Mandi,Ramy Bensebaini,Rayan Aït-Nouri,Nabil Bentaleb,Ismaël Bennacer,Houssem Aouar,Riyad Mahrez,NULL
+Arabia Saudi,Riad,7,Mohammed Al-Owais,Abdulelah Alamri,Saud Abdulhamid,Moteb Al Harbi,Hassan Altambakti,Mohammed Abu Al Shamat,Mohammed Kanno,Abdullah Alkhaibari,Salem Al Dawsari,Firas Al Breikan,NULL
+Croacia,Zagreb,7,Dominik Livaković,Josip Stanišić,Josip Šutalo,Joško Gvardiol,Borna Sosa,Luka Modrić,Mateo Kovačić,Petar Sučić,Andrej Kramarić,Ante Budimir,NULL
+Argentina,Buenos Aires,19,Emiliano Martinez,Nahuel Molina,Cristian Romero,Nicolás Otamendi,Nicolás Tagliafico,Rodrigo De Paul,Enzo Fernández,Alexis Mac Allister,Lionel Messi,Lautaro Martínez,NULL
+Costa de Marfil,Yamusukro,11,Yahia Fofana,Wilfried Singo,Odilon Kossounou,Evan Ndicka,Ghislain Konan,Franck Kessié,Jean Michaël Seri,Seko Fofana,Simon Adingra,Sébastien Haller,NULL
+Paises Bajos,Ámsterdam,12,Bart Verbruggen,Denzel Dumfries,Stefan de Vrij,Virgil van Dijk,Nathan Aké,Jerdy Schouten,Tijjani Reijnders,Xavi Simons,Jeremie Frimpong,Memphis Depay,NULL
+Brasil,Brasilia,23,Alisson,Danilo,Marquinhos,Gabriel Magalhães,Guilherme Arana,Bruno Guimarães,Lucas Paquetá,Rodrygo,Raphinha,Endrick,NULL
+Qatar,Doha,2,Meshaal Barsham,Pedro Miguel,Lucas Mendes,Boualem Khoukh,Tarek Salman,Fatai Mohed,Ahmed Fathy,Jassem Gaber,Hassan Al-Haydos,Almoez Ali,NULL
+Estados Unidos,Washington D.C.,12,Matt Turner,Joe Scally,Chris Richards,Tim Ream,Antonee Robinson,Weston McKennie,Tyler Adams,Yunus Musah,Timothy Weah,Folarin Balogun,NULL
+Uruguay,Montevideo,15,Sergio Rochet,Nahitan Nández,Ronald Araújo,José María Giménez,Mathías Olivera,Manuel Ugarte,Federico Valverde,Rodrigo Bentancur,Facundo Pellistri,Darwin Núñez,NULL
+Senegal,Dakar,4,Édouard Mendy,Formose Mendy,Kalidou Koulibaly,Moussa Niakhaté,Ismail Jakobs,Pape Matar Sarr,Idrissa Gueye,Lamine Camara,Ismaïla Sarr,Nicolas Jackson,NULL
+Jordania,Amán,1,Yazan Al-Naimat,Abdallah Nasib,Yazan Al-Arab,Salem Al-Ajalin,Ehsan Haddad,Nizar Al-Rashdan,Noor Al-Rawabdeh,Mahmoud Al-Mardi,Mousa Al-Tamari,NULL
+Canada,Ottawa,3,Maxime Crépeau,Alistair Johnston,Moïse Bombito,Derek Cornelius,Alphonso Davies,Jonathan Osorio,Stephen Eustáquio,Ismaël Koné,Tajon Buchanan,Jonathan David,NULL
+Australia,Canberra,7,Mathew Ryan,Lewis Miller,Harry Souttar,Kye Rowles,Aziz Behich,Connor Metcalfe,Jackson Irvine,Aiden O'Neill,Martin Boyle,Kusini Yengi,NULL
+Nueva Zelanda,Wellington,3,Max Crocombe,Tim Payne,Tyler Bindon,Nando Pijnaker,Liberato Cacace,Joe Bell,Marko Stamenic,Matthew Garbett,Elijah Just,Chris Wood,NULL
+Panama,Ciudad de Panamá,2,Orlando Mosquera,Michael Amir Murillo,Edgardo Fariña,José Córdoba,Roderick Miller,Eric Davis,Adalberto Carrasquilla,Cristian Martínez,Yoel Bárcenas,José Fajardo,NULL
+Curazao,Willemstad,1,Eloy Room,Nathangelo Markelo,Sherel Floranus,Cuco Martina,Jurien Gaari,Vurnon Anita,Juninho Bacuna,Leandro Bacuna,Brandley Kuwas,Rangelo Janga,NULL
+Suecia,Estocolmo,13,Viktor Johansson,Emil Krafth,Isak Hien,Victor Lindelöf,Ludwig Augustinsson,Jens Cajuste,Anton Salétros,Dejan Kulusevski,Alexander Isak,Anthony Elanga,NULL
+Iran,Teherán,7,Alireza Beiranvand,Ramin Rezaeian,Hossein Kanaanizadegan,Shojae Khalilzadeh,Milad Mohammadi,Saeid Ezatolahi,Saman Ghoddos,Ahmad Nourollahi,Alireza Jahanbakhsh,Mehdi Taremi,NULL
+Uzbekistan,Tashkent,1,Utkir Yusupov,Husniddin Alikulov,Abdukodir Khusanov,Umar Eshmurodov,Sherzod Nasrullaev,Otabek Shukurov,Odiljon Hamrobekov,Azizbek Turgunboev,Jaloliddin Masharipov,Abbasbek Fayzullaev,NULL
+Irak,Bagdad,2,Jalal Hassan,Hussein Ali,Saad Natiq,Rebin Sulaka,Merchas Doski,Amir Al-Ammari,Osama Rashid,Zidane Iqbal,Ibrahim Bayesh,Aymen Hussein,NULL
+Ghana,Acra,5,Lawrence Ati-Zigi,Alidu Seidu,Alexander Djiku,Mohammed Salisu,Gideon Mensah,Thomas Partey,Salis Abdul Samed,Mohammed Kudus,Ernest Nuamah,Iñaki Williams,NULL

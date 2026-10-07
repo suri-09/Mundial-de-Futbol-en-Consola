@@ -451,4 +451,20 @@ public class Utilidades {
         }
     }
 
+    public static class info {
+        public static String[] getInfo(int alejo) throws FileNotFoundException {
+
+            Scanner sc = new Scanner(new File("./info.csv"));
+
+            for (int pais = 0; pais < alejo; pais++) {
+                sc.nextLine();
+            }
+            String[] info = sc.nextLine().split(",");
+
+            sc.close();
+
+            return info;
+        }
+    }
+
 }

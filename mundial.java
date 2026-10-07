@@ -18,7 +18,8 @@ public class mundial {
             System.out.println("[1] Ver la bandera de un país.\n" +
                     "[2] Ver o editar la tabla de posiciones.\n" +
                     "[3] Ver partidos e integrantes por grupos.\n" +
-                    "[4] Salir");
+                    "[4] Ver información de un pais.\n" +
+                    "[5] Salir");
 
             int opcion = Utilidades.input.getInt("ingrese una opción");
 
@@ -245,6 +246,50 @@ public class mundial {
                     }
 
                 case 4:
+                    System.out.println("Lista de paises");
+                    for (int i = 0; i < paises.length; i++) {
+                        System.out.println((i + 1) + ") " + paises[i]);
+                    }
+
+                    String[] info = null;
+                    byte[][] banderas = null;
+                    int choice = -1;
+                    boolean centin = true;
+                    while (centin) {
+
+                        try {
+                            choice = Utilidades.input.getInt("Seleccione un país") - 1;
+                            info = Utilidades.info.getInfo(choice);
+                            banderas = Utilidades.getBandera(choice);
+
+                            centin = false;
+
+                        } catch (RuntimeException | FileNotFoundException e) {
+                            System.out.println("¡Debes ingresar un número de país válido!");
+                        }
+                    }
+                    byte[][] band = Utilidades.mermar(Utilidades.agregar(banderas, 7), 13);
+
+                    for (int c = 0; c < band.length; c++) {
+                        for (int j = 0; j < band[0].length; j++) {
+                            Utilidades.printColor(band[c][j]);
+                        }
+                        System.out.println("\033[0m");
+                    }
+
+                    System.out.println();
+                    System.out.println("=====================================================================");
+                    System.out.println("  " + paises[choice]);
+                    System.out.println("=====================================================================");
+                    System.out.println("Capital: " + info[1]);
+                    System.out.println("Jugadores principales: " + info[3] + ", " + info[4] + ", " + info[5] + ", ");
+                    System.out.println(info[6] + ", " + info[7] + ", " + info[8] + ", " + info[9] + ", " + info[10]);
+                    System.out.println("Apariciones en Copas del Mundo: " + info[2]);
+                    System.out.println("=====================================================================");
+
+                    break;
+
+                case 5:
                     System.out.println("¡Hasta luego!");
                     System.exit(0);
                     break;
@@ -253,5 +298,6 @@ public class mundial {
                     break;
             }
         }
+
     }
 }
