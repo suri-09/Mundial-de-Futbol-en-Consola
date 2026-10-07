@@ -245,6 +245,8 @@ public class mundial {
                         }
                     }
 
+                    break;
+
                 case 4:
                     System.out.println("Lista de paises");
                     for (int i = 0; i < paises.length; i++) {
