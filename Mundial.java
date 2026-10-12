@@ -1,0 +1,330 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class Mundial {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        while (true) {
+            System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
+                    "|  \\/  | | | | \\ | |  _ \\_ _|  / \\  | |     |___ \\ / _ \\|___ \\ / ___|\n" + //
+                    "| |\\/| | | | |  \\| | | | | |  / _ \\ | |       __) | | | | __) | |  _ \n" + //
+                    "| |  | | |_| | |\\  | |_| | | / ___ \\| |___   / __/| |_| |/ __/| |_| |\n" + //
+                    "|_|  |_|\\___/|_| \\_|____/___/_/   \\_\\_____| |_____|\\___/_____|\\____|");
+
+            System.out.println("=====================================================================");
+            System.out.println(" VISUALIZADOR DE BANDERAS DE LAS 48 SELECCIONES");
+            System.out.println("=====================================================================");
+
+            System.out.println("[1] Ver la bandera de un país.\n" +
+                    "[2] Ver o editar la tabla de posiciones.\n" +
+                    "[3] Ver partidos e integrantes por grupos.\n" +
+                    "[4] Ver información de un pais.\n" +
+                    "[5] Salir");
+
+            int opcion = Utilidades.input.getInt("ingrese una opción");
+
+            String[] paises = {"AUSTRIA", "MEXICO", "MARRUECOS", "NORUEGA", "BOSNIA Y HERZEGOVINA", "TUNEZ",
+                    "INGLATERRA ", "ESPANA", "FRANCIA", "CABO VERDE", "COREA DEL SUR", "CONGO RD", "ECUADOR",
+                    "ALEMANIA", "BÉLGICA", "CHEQUIA", "JAPON", "SUDÁFRICA", "TURQUÍA", "COLOMBIA", "ESCOCIA",
+                    "PARAGUAY", "SUIZA", "EGIPTO", "PORTUGAL", "HAITI", "ARGELIA", "ARABIA SAUDI", "CROACIA",
+                    "ARGENTINA", "COSTA DE MARFIL", "PAISES BAJOS", "BRASIL", "QATAR", "ESTADOS UNIDOS", "URUGUAY",
+                    "SENEGAL", "JORDANIA", "CANADA", "AUSTRALIA", "NUEVA ZELANDA", "PANAMA", "CURAZAO", "SUECIA",
+                    "IRAN", "UZBEKISTAN", "IRAK", "GHANA"};
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Lista de paises:");
+
+                    for (int i = 0; i < paises.length; i++) {
+                        System.out.println((i + 1) + ") " + paises[i]);
+                    }
+
+                    byte[][] banderaSel;
+                    byte[][] bandera;
+                    int seleccion;
+
+                    while (true) {
+                        try {
+                            seleccion = Utilidades.input.getInt("Seleccione un país:") - 1;
+                            banderaSel = Utilidades.getBandera(seleccion);
+
+                            break;
+                        } catch (RuntimeException e) {
+                            System.out.println("Debes ingresar un número de país valido!");
+                        }
+                    }
+
+                    System.out.println(paises[seleccion]);
+
+                    System.out.println("Escoge el tamaño de la bandera.");
+                    System.out.println("[1] Ícono\n" +
+                            "[2] Pequeño\n" +
+                            "[3] Mediano\n" +
+                            "[4] Grande");
+
+                    int size = Utilidades.input.getInt("Seleccione un tamaño:");
+
+                    while (size < 1 || size > 4) {
+                        System.out.println("¡Debes ingresar una opción valida!");
+                        size = Utilidades.input.getInt("Seleccione un tamaño:");
+                    }
+
+                    // TODO: Buscar los valores mas optimos para cada tamaño
+
+                    switch (size) {
+                        case 1:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 7), 13);
+                            break;
+                        case 2:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 1), 1);
+                            break;
+                        case 3:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 3), 2);
+                            break;
+                        case 4:
+                            bandera = Utilidades.mermar(Utilidades.agregar(banderaSel, 2), 1);
+                            break;
+                        default:
+                            throw new IllegalStateException("Valor inesperado: " + size);
+                    }
+
+                    for (int i = 0; i < bandera.length; i++) {
+                        for (int j = 0; j < bandera[0].length; j++) {
+                            Utilidades.printColor(bandera[i][j]);
+                        }
+                        System.out.println("\033[0m");
+                    }
+
+                    break;
+
+                case 2:
+
+                    int mostrar = 12;
+                    int paginas = 48 / mostrar;
+                    int contador = 0;
+
+                    String[][] tabla = Utilidades.tablaPosiciones.getTabla();
+
+                    boolean centinela = true;
+
+                    while (centinela) {
+
+                        Utilidades.mostrarTabla(tabla, contador, mostrar);
+
+                        System.out.println();
+                        System.out.println("[1] Mostrar más.\n" +
+                                "[2] Mostrar menos.\n" +
+                                "[3] Editar algún valor.\n" +
+                                "[4] Salir");
+
+                        System.out.println();
+                        int eleccion = Utilidades.input.getInt("Ingrese una opción:");
+
+                        switch (eleccion) {
+                            case 1:
+                                if (contador + mostrar < tabla.length) {
+                                    contador = contador + 12;
+                                } else {
+                                    System.out.println("Ya estas mostrando todas las opciones");
+                                }
+
+                                break;
+
+                            case 2:
+                                if (contador - 12 >= 0) {
+                                    contador = contador - 12;
+                                } else {
+                                    System.out.println("No hay menos opciones");
+                                }
+
+                                break;
+                            case 3:
+
+                                int fila = Utilidades.input.getInt("Ingrese el indice del país que desea cambiar:") - 1;
+
+                                while (fila < 0 || fila >= 48) {
+                                    System.out.println("¡Debes ingresar un indice válido!");
+                                    fila = Utilidades.input.getInt("Ingrese el indice del país que desea cambiar:") - 1;
+                                }
+
+                                int col;
+                                // PJ(no)   PG   PE   PP   GF   GC   DG(no)   TA   TR  Pts(no)
+                                System.out.println("[1] Partidos ganados.\n" +
+                                        "[2] Partidos empatados.\n" +
+                                        "[3] Partidos perdidos.\n" +
+                                        "[4] Goles a favor.\n" +
+                                        "[5] Goles en contra.\n" +
+                                        "[6] Tarjetas amarillas.\n" +
+                                        "[7] Tarjetas rojas.");
+
+                                int dato = Utilidades.input.getInt("Seleccione el dato que desea cambiar:");
+
+                                while (dato < 1 || dato > 7) {
+                                    System.out.println("¡Debes ingresar una opción valida!");
+                                    dato = Utilidades.input.getInt("Seleccione el dato que desea cambiar:");
+                                }
+
+                                col = switch (dato) {
+                                    case 1 -> 2;
+                                    case 2 -> 3;
+                                    case 3 -> 4;
+                                    case 4 -> 5;
+                                    case 5 -> 6;
+                                    case 6 -> 8;
+                                    case 7 -> 9;
+                                    default -> 0;
+                                };
+
+                                int valor = Utilidades.input.getInt("Ingrese el valor al que desea cambiar:");
+
+                                System.out.println();
+
+                                if (valor <= 20 && valor >= 0) {
+                                    try {
+                                        Utilidades.tablaPosiciones.editTabla(fila, col, valor);
+                                        tabla = Utilidades.tablaPosiciones.getTabla();
+                                    } catch (IOException e) {
+                                        System.out.println("error" + e.getMessage());
+                                    }
+
+                                } else {
+                                    System.out.println("El valor no es permitido");
+                                    System.out.println();
+                                }
+
+                                break;
+
+                            case 4:
+                                centinela = false;
+                                break;
+
+                        }
+
+                    }
+                    break;
+
+                case 3:
+                    boolean cent = true;
+                    while (cent) {
+
+                        System.out.println();
+                        System.out.println("[1] Mostrar partidos por grupos.\n" +
+                                "[2] Mostrar hora e integrantes de un partido.\n" +
+                                "[3] Salir.\n");
+
+                        int entrada = Utilidades.input.getInt("Ingrese una opción:");
+                        switch (entrada) {
+                            case 1:
+                                String[][] partidos;
+
+                                while (true) {
+                                    try {
+                                        String grupo = Utilidades.input.getString("Ingresa la letra del grupo:");
+
+                                        partidos = Utilidades.partidos.partidosGrupo(grupo);
+
+                                        break;
+
+                                    } catch (Exception e) {
+                                        System.out.println("¡Ese grupo no ha sido encontrado!");
+                                    }
+                                }
+
+                                System.out.println("Los partidos en el grupo " + partidos[0][1] + " son:");
+
+                                for (int i = 0; i < partidos.length; i++) {
+                                    System.out.println(partidos[i][5] + " vs " + partidos[i][6] + " el dia "
+                                            + partidos[i][3] + " a las " + partidos[i][4]);
+
+                                }
+
+                                break;
+
+                            case 2:
+                                String[] partido = new String[7];
+
+                                while (true) {
+                                    try {
+                                        String grupo = Utilidades.input.getString("Ingresa el código del partido:");
+
+                                        partido = Utilidades.partidos.getPartido(grupo);
+
+                                        break;
+
+                                    } catch (Exception e) {
+                                        System.out.println("¡Ese partido no ha sido encontrado!");
+                                    }
+                                }
+
+                                System.out.println("El partido " + partido[0] + " sera " + partido[5] + " vs "
+                                        + partido[6] + " el dia " + partido[3] + " a " +
+                                        "las " + partido[4]);
+
+                                break;
+
+                            case 3:
+                                cent = false;
+                                break;
+                            default:
+                                System.out.println("¡Debes ingresar una opción valida!");
+                                break;
+                        }
+                    }
+
+                    break;
+                case 4:
+                    System.out.println("Lista de paises");
+                    for (int i = 0; i < paises.length; i++) {
+                        System.out.println((i + 1) + ") " + paises[i]);
+                    }
+
+                    String[] info = null;
+                    byte[][] banderas = null;
+                    int choice = -1;
+                    boolean centi = true;
+                    while (centi) {
+
+                        try {
+                            choice = Utilidades.input.getInt("Seleccione un país") - 1;
+                            info = Utilidades.info.getInfo(choice);
+                            banderas = Utilidades.getBandera(choice);
+
+                            centi = false;
+
+                        } catch (RuntimeException | FileNotFoundException e) {
+                            System.out.println("¡Debes ingresar un número de país válido!");
+                        }
+                    }
+                    byte[][] band = Utilidades.mermar(Utilidades.agregar(banderas, 7), 13);
+
+                    for (int c = 0; c < band.length; c++) {
+                        for (int j = 0; j < band[0].length; j++) {
+                            Utilidades.printColor(band[c][j]);
+                        }
+                        System.out.println("\033[0m");
+                    }
+
+                    System.out.println();
+                    System.out.println("=====================================================================");
+                    System.out.println("  " + paises[choice]);
+                    System.out.println("=====================================================================");
+                    System.out.println("Capital: " + info[1]);
+                    System.out.println("Jugadores principales: " + info[3] + ", " + info[4] + ", " + info[5] + ", ");
+                    System.out.println(info[6] + ", " + info[7] + ", " + info[8] + ", " + info[9] + ", " + info[10]);
+                    System.out.println("Apariciones en Copas del Mundo: " + info[2]);
+                    System.out.println("=====================================================================");
+
+                    break;
+
+                case 5:
+                    System.out.println("¡Hasta luego!");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("¡Debes ingresar una opción valida!");
+                    break;
+            }
+        }
+
+    }
+}
