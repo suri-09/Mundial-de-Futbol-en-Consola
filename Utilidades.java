@@ -136,13 +136,13 @@ public class Utilidades {
     /**
      * Imprime la tabla de posiciones dada.
      *
-     * @param tabla Matriz de la tabla a imprimir.
+     * @param tabla          Matriz de la tabla a imprimir.
      * @param desplazamiento Desplazamiento vertical de la tabla.
-     * @param mostrar Cantidad de filas a mostrar a la vez.
+     * @param mostrar        Cantidad de filas a mostrar a la vez.
      */
     public static void mostrarTabla(String[][] tabla, int desplazamiento, int mostrar) {
 
-        String[] arriba = { "Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts" };
+        String[] arriba = {"Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts"};
 
         for (int c = 0; c < mostrar; c++) {
 
@@ -171,7 +171,6 @@ public class Utilidades {
          * maneja errores.
          *
          * @param prompt Mensaje a mostrar al usuario.
-         *
          * @return Entrada del usuario.
          */
         public static int getInt(String prompt) {
@@ -201,7 +200,6 @@ public class Utilidades {
          * maneja errores.
          *
          * @param prompt Mensaje a mostrar al usuario.
-         *
          * @return Entrada del usuario.
          */
         public static String getString(String prompt) {
@@ -349,7 +347,6 @@ public class Utilidades {
          * Lee la tabla de partidos, busca todos los del grupo dado, y los devuelve en una matriz.
          *
          * @param grupo Grupo a buscar.
-         *
          * @return Matriz con los 6 partidos del grupo.
          */
         public static String[][] partidosGrupo(String grupo) throws FileNotFoundException {
@@ -383,15 +380,19 @@ public class Utilidades {
                 throw new RuntimeException(e);
             }
 
+            if (partidos[0][0] == null) {
+                throw new RuntimeException();
+            }
+
             return partidos;
 
         }
 
         /**
-         * Busca el partido del codigo en la tabla de partidos, y lo devuelve como un arreglo, si el partido no se encuentra arroja una excepción.
+         * Busca el partido del codigo en la tabla de partidos, y lo devuelve como un arreglo, si el partido no se
+         * encuentra arroja una excepción.
          *
          * @param codigo Código del partido a buscar.
-         *
          * @return Arreglo del partido.
          */
         public static String[] getPartido(String codigo) throws FileNotFoundException {
@@ -421,6 +422,10 @@ public class Utilidades {
                 throw new RuntimeException(e);
             }
 
+            if (partido[0] == null) {
+                throw new RuntimeException();
+            }
+
             return partido;
 
         }
@@ -432,7 +437,6 @@ public class Utilidades {
          * Busca el equipo en la tabla de información de equipos, y lo devuelve.
          *
          * @param pais Índice del país a buscar.
-         *
          * @return Arreglo de información del país.
          */
         public static String[] getInfo(int pais) throws FileNotFoundException {
