@@ -61,48 +61,6 @@ public class Utilidades {
     }
 
     /**
-     * Da los nombres de los países, leídos de la primera columna de cada bloque del
-     * CSV.
-     *
-     * @return Array con los nombres en el mismo orden que las banderas.
-     */
-    public static String[] getPaises() throws FileNotFoundException {
-
-        String[] paises = new String[TOTAL_PAISES];
-
-        Scanner sc = new Scanner(new File("./banderas.csv"));
-
-        for (int pais = 0; pais < TOTAL_PAISES; pais++) {
-
-            paises[pais] = sc.nextLine().split(",")[0].trim();
-
-            for (int i = 0; i < FILAS; i++) {
-                sc.nextLine();
-            }
-        }
-
-        sc.close();
-
-        return paises;
-    }
-
-    /**
-     * Imprime el encabezado del programa.
-     */
-    public static void banner() {
-
-        System.out.println(" __  __ _   _ _   _ ____ ___    _    _       ____   ___  ____   ____ \n" + //
-                "|  \\/  | | | | \\ | |  _ \\_ _|  / \\  | |     |___ \\ / _ \\|___ \\ / ___|\n" + //
-                "| |\\/| | | | |  \\| | | | | |  / _ \\ | |       __) | | | | __) | |  _ \n" + //
-                "| |  | | |_| | |\\  | |_| | | / ___ \\| |___   / __/| |_| |/ __/| |_| |\n" + //
-                "|_|  |_|\\___/|_| \\_|____/___/_/   \\_\\_____| |_____|\\___/_____|\\____|");
-
-        System.out.println("=====================================================================");
-        System.out.println(" VISUALIZADOR DE BANDERAS DE LAS 48 SELECCIONES");
-        System.out.println("=====================================================================");
-    }
-
-    /**
      * Merma un array bidimensional según el factor dado, eliminando las filas y las
      * columnas que están entre
      * aquellas que sobreviven.
@@ -175,7 +133,14 @@ public class Utilidades {
         System.out.print(COLORES[color - 1] + "   ");
     }
 
-    public static void mostrarTabla(String[][] tabla, int contador, int mostrar) {
+    /**
+     * Imprime la tabla de posiciones dada.
+     *
+     * @param tabla Matriz de la tabla a imprimir.
+     * @param desplazamiento Desplazamiento vertical de la tabla.
+     * @param mostrar Cantidad de filas a mostrar a la vez.
+     */
+    public static void mostrarTabla(String[][] tabla, int desplazamiento, int mostrar) {
 
         String[] arriba = { "Equipo", "PJ", "PG", "PE", "PP", "GF", "GC", "DG", "TA", "TR", "Pts" };
 
@@ -187,7 +152,7 @@ public class Utilidades {
             }
             System.out.println();
 
-            for (int i = contador; i < mostrar + contador; i++) {
+            for (int i = desplazamiento; i < mostrar + desplazamiento; i++) {
                 System.out.printf("%-4d%-22s", i + 1, tabla[i][0]);
 
                 for (int j = 1; j < tabla[i].length; j++) {
@@ -206,6 +171,8 @@ public class Utilidades {
          * maneja errores.
          *
          * @param prompt Mensaje a mostrar al usuario.
+         *
+         * @return Entrada del usuario.
          */
         public static int getInt(String prompt) {
 
@@ -229,6 +196,14 @@ public class Utilidades {
             return num;
         }
 
+        /**
+         * Imprime el prompt dada e intenta obtener el string de la consola,
+         * maneja errores.
+         *
+         * @param prompt Mensaje a mostrar al usuario.
+         *
+         * @return Entrada del usuario.
+         */
         public static String getString(String prompt) {
 
             Scanner sc = new Scanner(System.in);
@@ -295,35 +270,35 @@ public class Utilidades {
 
             sc.close();
 
-            tabla[fila][col + 1] = "" + valor;
+            tabla[fila][col] = "" + valor;
 
-            for (fila = 0; fila < tabla.length; fila++) {
+            for (int i = 0; i < tabla.length; i++) {
                 // DG = GF - GC ----> DG = 7 , GF = 5 , GC = 6
-                int GF = Integer.parseInt(tabla[fila][5]);
-                int GC = Integer.parseInt(tabla[fila][6]);
+                int GF = Integer.parseInt(tabla[i][5]);
+                int GC = Integer.parseInt(tabla[i][6]);
                 int GD = GF - GC;
 
-                tabla[fila][7] = String.valueOf(GD);
+                tabla[i][7] = String.valueOf(GD);
             }
-            for (fila = 0; fila < tabla.length; fila++) {
+            for (int i = 0; i < tabla.length; i++) {
                 // Pts = (PG * 3) + (PE * 1 ) ---> pts = 10
-                int PG = Integer.parseInt(tabla[fila][2]);
-                int PE = Integer.parseInt(tabla[fila][3]);
+                int PG = Integer.parseInt(tabla[i][2]);
+                int PE = Integer.parseInt(tabla[i][3]);
                 int pts = (PG * 3) + PE;
 
-                tabla[fila][10] = String.valueOf(pts);
+                tabla[i][10] = String.valueOf(pts);
 
             }
 
-            for (fila = 0; fila < tabla.length; fila++) {
+            for (int i = 0; i < tabla.length; i++) {
                 // PJ = PG + PE + PP ---> PJ = 1, PG = 2, PE = 3, PP = 4
-                int PG = Integer.parseInt(tabla[fila][2]);
-                int PE = Integer.parseInt(tabla[fila][3]);
-                int PP = Integer.parseInt(tabla[fila][4]);
+                int PG = Integer.parseInt(tabla[i][2]);
+                int PE = Integer.parseInt(tabla[i][3]);
+                int PP = Integer.parseInt(tabla[i][4]);
 
                 int PJ = PG + PE + PP;
 
-                tabla[fila][1] = String.valueOf(PJ);
+                tabla[i][1] = String.valueOf(PJ);
 
             }
 
@@ -347,25 +322,11 @@ public class Utilidades {
     public static class partidos {
         private static final int columnas = 7;
 
-        public static String[][] mostrarPartidos() throws FileNotFoundException {
-
-            Scanner sc = new Scanner(new File("./partidos.csv"));
-
-            String[][] tabla = new String[TOTAL_PAISES][columnas];
-
-            for (int i = 0; i < TOTAL_PAISES; i++) {
-
-                String[] lineaActual = sc.nextLine().split(",");
-
-                tabla[i] = lineaActual;
-            }
-
-            sc.close();
-
-            return tabla;
-
-        }
-
+        /**
+         * Lee la tabla de equipos del mundial y los organiza en una matriz.
+         *
+         * @return Matriz de los equipos del mundial.
+         */
         public static String[][] mostrarEquipos() throws FileNotFoundException {
 
             Scanner sc = new Scanner(new File("./equipos_mundial.csv"));
@@ -384,14 +345,21 @@ public class Utilidades {
             return tabla;
         }
 
+        /**
+         * Lee la tabla de partidos, busca todos los del grupo dado, y los devuelve en una matriz.
+         *
+         * @param grupo Grupo a buscar.
+         *
+         * @return Matriz con los 6 partidos del grupo.
+         */
         public static String[][] partidosGrupo(String grupo) throws FileNotFoundException {
 
             Scanner sc = new Scanner(new File("./partidos.csv"));
 
-            String[][] tabla = new String[TOTAL_PAISES][columnas];
+            String[][] tabla = new String[72][columnas];
             String[][] partidos = new String[6][columnas];
 
-            for (int i = 0; i < TOTAL_PAISES; i++) {
+            for (int i = 0; i < tabla.length; i++) {
 
                 String[] lineaActual = sc.nextLine().split(",");
 
@@ -419,14 +387,21 @@ public class Utilidades {
 
         }
 
+        /**
+         * Busca el partido del codigo en la tabla de partidos, y lo devuelve como un arreglo, si el partido no se encuentra arroja una excepción.
+         *
+         * @param codigo Código del partido a buscar.
+         *
+         * @return Arreglo del partido.
+         */
         public static String[] getPartido(String codigo) throws FileNotFoundException {
 
             Scanner sc = new Scanner(new File("./partidos.csv"));
 
-            String[][] tabla = new String[TOTAL_PAISES][columnas];
+            String[][] tabla = new String[72][columnas];
             String[] partido = new String[columnas];
 
-            for (int i = 0; i < TOTAL_PAISES; i++) {
+            for (int i = 0; i < tabla.length; i++) {
 
                 String[] lineaActual = sc.nextLine().split(",");
 
@@ -452,13 +427,22 @@ public class Utilidades {
     }
 
     public static class info {
-        public static String[] getInfo(int alejo) throws FileNotFoundException {
+
+        /**
+         * Busca el equipo en la tabla de información de equipos, y lo devuelve.
+         *
+         * @param pais Índice del país a buscar.
+         *
+         * @return Arreglo de información del país.
+         */
+        public static String[] getInfo(int pais) throws FileNotFoundException {
 
             Scanner sc = new Scanner(new File("./info.csv"));
 
-            for (int pais = 0; pais < alejo; pais++) {
+            for (int fila = 0; fila < pais; fila++) {
                 sc.nextLine();
             }
+
             String[] info = sc.nextLine().split(",");
 
             sc.close();
